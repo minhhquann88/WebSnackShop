@@ -6,8 +6,8 @@
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
-    <EfCoreVersion>10.0.13</EfCoreVersion>
-    <AspNetVersion>10.0.13</AspNetVersion>
+    <EfCoreVersion>10.0.14</EfCoreVersion>
+    <AspNetVersion>10.0.14</AspNetVersion>
   </PropertyGroup>
 
   <ItemGroup Label="Application">
