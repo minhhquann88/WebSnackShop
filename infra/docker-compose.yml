@@ -1,0 +1,33 @@
+# Local development infrastructure. The API itself runs with `dotnet run` for fast hot reload.
+#   docker compose -f infra/docker-compose.yml up -d
+services:
+  postgres:
+    image: postgres:17-alpine
+    container_name: snackshop-postgres
+    environment:
+      POSTGRES_USER: snackshop
+      POSTGRES_PASSWORD: snackshop
+      POSTGRES_DB: snackshop_dev
+      TZ: Asia/Ho_Chi_Minh
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U snackshop -d snackshop_dev"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: snackshop-mailpit
+    ports:
+      - "8025:8025"   # Web UI
+      - "1025:1025"   # SMTP
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: 1
+      MP_SMTP_AUTH_ALLOW_INSECURE: 1
+
+volumes:
+  pgdata:

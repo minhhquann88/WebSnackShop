@@ -1,0 +1,31 @@
+version: 2
+updates:
+  - package-ecosystem: nuget
+    directory: /backend
+    schedule: { interval: weekly, day: monday, time: "07:00", timezone: Asia/Ho_Chi_Minh }
+    open-pull-requests-limit: 5
+    groups:
+      microsoft:
+        patterns: ["Microsoft.*", "System.*", "Npgsql*", "EFCore.*"]
+      testing:
+        patterns: ["xunit*", "Shouldly", "NSubstitute", "Testcontainers*", "Respawn", "Bogus", "NetArchTest*", "Microsoft.NET.Test.Sdk", "Microsoft.Testing.*"]
+    ignore:
+      # ADR-0006: stay on the Apache-2.0 licensed MediatR 12.x line.
+      - dependency-name: MediatR
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: npm
+    directory: /frontend
+    schedule: { interval: weekly, day: monday, time: "07:00", timezone: Asia/Ho_Chi_Minh }
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: monthly }
+
+  - package-ecosystem: docker
+    directories: ["/backend/src/SnackShop.Api", "/frontend"]
+    schedule: { interval: monthly }

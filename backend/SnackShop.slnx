@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SnackShop.Api/SnackShop.Api.csproj" />
+    <Project Path="src/SnackShop.Application/SnackShop.Application.csproj" />
+    <Project Path="src/SnackShop.Domain/SnackShop.Domain.csproj" />
+    <Project Path="src/SnackShop.Infrastructure/SnackShop.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SnackShop.Api.IntegrationTests/SnackShop.Api.IntegrationTests.csproj" />
+    <Project Path="tests/SnackShop.Application.Tests/SnackShop.Application.Tests.csproj" />
+    <Project Path="tests/SnackShop.ArchitectureTests/SnackShop.ArchitectureTests.csproj" />
+    <Project Path="tests/SnackShop.Domain.Tests/SnackShop.Domain.Tests.csproj" />
+  </Folder>
+</Solution>

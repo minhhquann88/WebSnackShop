@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Domain depends on nothing but the BCL. Architecture tests enforce this. -->
+
+</Project>

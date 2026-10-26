@@ -1,0 +1,62 @@
+# ---------- Secrets / env ----------
+.env
+.env.*
+!.env.example
+*.pfx
+*.key
+appsettings.*.Local.json
+secrets.json
+
+# ---------- .NET ----------
+bin/
+obj/
+out/
+publish/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+*.swp
+TestResults/
+coverage/
+*.cobertura.xml
+*.trx
+.idea/
+*.DotSettings.user
+BenchmarkDotNet.Artifacts/
+
+# ---------- Node / Next.js ----------
+node_modules/
+.next/
+out/
+.turbo/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+playwright-report/
+test-results/
+
+# ---------- Docker / infra ----------
+infra/backups/
+infra/certbot/
+uploads/
+pgdata/
+
+# ---------- OS / editor ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# ---------- Build artifacts ----------
+artifacts/

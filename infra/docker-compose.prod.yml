@@ -1,0 +1,116 @@
+# Production stack for one VPS (docs/08). Run from infra/ with a filled-in .env next to this file:
+#   docker compose -f docker-compose.prod.yml up -d
+# First deploy: ./scripts/init-letsencrypt.sh   Then every release: ./scripts/deploy.sh <image-tag>
+name: snackshop
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      TZ: Asia/Ho_Chi_Minh
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks: [backend]
+    logging: &logging
+      driver: json-file
+      options: { max-size: "20m", max-file: "5" }
+
+  api:
+    image: ${API_IMAGE}:${API_TAG:-latest}
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      Storage__LocalPath: /app/uploads
+      Storage__PublicBaseUrl: https://${API_DOMAIN}/uploads
+    volumes:
+      - uploads:/app/uploads
+      - dpkeys:/app/keys
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks: [backend]
+    logging: *logging
+
+  # Optional self-hosted Next.js frontend (default plan is Vercel). Enable with: --profile web
+  web:
+    image: ${WEB_IMAGE:-snackshop-web}:${WEB_TAG:-latest}
+    profiles: [web]
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_API_BASE_URL: https://${API_DOMAIN}
+      API_INTERNAL_URL: http://api:8080
+    depends_on: [api]
+    networks: [backend]
+    logging: *logging
+
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      API_DOMAIN: ${API_DOMAIN}
+      WEB_DOMAIN: ${WEB_DOMAIN:-}
+    volumes:
+      - ./nginx/templates:/etc/nginx/templates:ro
+      - ./nginx/snippets:/etc/nginx/snippets:ro
+      - certbot-www:/var/www/certbot:ro
+      - certbot-conf:/etc/letsencrypt:ro
+      - uploads:/srv/uploads:ro
+    depends_on: [api]
+    networks: [backend]
+    logging: *logging
+
+  certbot:
+    image: certbot/certbot:v3.0.1
+    restart: unless-stopped
+    volumes:
+      - certbot-www:/var/www/certbot
+      - certbot-conf:/etc/letsencrypt
+    # Renew twice a day; nginx re-reads certificates on its periodic reload (see nginx command note in deploy.sh).
+    entrypoint: ["/bin/sh", "-c", "trap exit TERM; while :; do certbot renew --webroot -w /var/www/certbot --quiet; sleep 12h & wait $${!}; done"]
+    logging: *logging
+
+  backup:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      PGHOST: postgres
+      PGUSER: ${POSTGRES_USER}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      PGDATABASE: ${POSTGRES_DB}
+      BACKUP_RETENTION_DAYS: ${BACKUP_RETENTION_DAYS:-14}
+      TZ: Asia/Ho_Chi_Minh
+    volumes:
+      - ./scripts/backup.sh:/usr/local/bin/backup.sh:ro
+      - ./backups:/backups
+      - uploads:/uploads:ro
+    # Daily at 03:00 Vietnam time.
+    entrypoint: ["/bin/sh", "-c", "echo '0 3 * * * /bin/sh /usr/local/bin/backup.sh scheduled' > /etc/crontabs/root && exec crond -f -l 8"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks: [backend]
+    logging: *logging
+
+volumes:
+  pgdata:
+  uploads:
+  dpkeys:
+  certbot-www:
+  certbot-conf:
+
+networks:
+  backend:

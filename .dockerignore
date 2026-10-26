@@ -1,0 +1,19 @@
+# Build context is the repository root (see backend/src/SnackShop.Api/Dockerfile and frontend/Dockerfile).
+.git/
+.github/
+docs/
+infra/
+**/bin/
+**/obj/
+**/TestResults/
+**/.vs/
+**/.idea/
+**/*.user
+**/uploads/
+**/node_modules/
+**/.next/
+backend/tests/
+artifacts/
+.env
+**/.env*
+!**/.env.example
