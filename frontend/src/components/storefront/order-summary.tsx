@@ -16,13 +16,15 @@ export function EstimateSummary({ estimate }: { estimate: OrderEstimate }) {
         <dd>{estimate.shippingFee.amount === 0 ? 'Miễn phí' : formatVnd(estimate.shippingFee)}</dd>
       </div>
       {threshold && remaining > 0 ? (
-        <p className="rounded-md bg-accent px-2 py-1.5 text-xs text-accent-foreground">
+        <p className="rounded-md bg-secondary px-2 py-1.5 text-xs font-medium text-secondary-foreground">
           Mua thêm {formatVnd(remaining)} để được miễn phí vận chuyển.
         </p>
       ) : null}
-      <div className="flex justify-between border-t pt-2 text-base font-semibold">
+      <div className="flex items-baseline justify-between border-t pt-2 text-base font-semibold">
         <dt>Tổng cộng</dt>
-        <dd className="text-primary">{formatVnd(estimate.total)}</dd>
+        <dd className="font-display text-2xl font-extrabold text-chili-deep tabular-nums">
+          {formatVnd(estimate.total)}
+        </dd>
       </div>
     </dl>
   )

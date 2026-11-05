@@ -28,7 +28,15 @@ export function Providers({ children }: { children: ReactNode }) {
     <QueryClientProvider client={queryClient}>
       <SessionBootstrap />
       {children}
-      <Toaster richColors position="top-center" closeButton />
+      <Toaster
+        richColors
+        position="top-center"
+        closeButton
+        toastOptions={{
+          className: 'font-sans rounded-xl! border-border!',
+          style: { fontFamily: 'var(--font-be-vietnam)' },
+        }}
+      />
     </QueryClientProvider>
   )
 }

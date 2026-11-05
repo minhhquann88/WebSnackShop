@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 
+/** Page title in display type with a short chili underline, like a shelf label. */
 export function PageHeader({
   title,
   description,
@@ -21,13 +22,13 @@ export function PageHeader({
         {backHref ? (
           <Link
             href={backHref}
-            className="flex w-fit items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
+            className="flex w-fit items-center gap-1 text-sm text-muted-foreground hover:text-chili-deep"
           >
             <ChevronLeft className="size-4" aria-hidden />
             {backLabel}
           </Link>
         ) : null}
-        <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
+        <h1 className="font-display text-3xl leading-none font-extrabold">{title}</h1>
         {description ? <div className="text-sm text-muted-foreground">{description}</div> : null}
       </div>
       {actions ? <div className="flex flex-wrap gap-2">{actions}</div> : null}

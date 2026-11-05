@@ -14,7 +14,16 @@ import { Checkbox, Input, NativeSelect } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Pagination, totalPagesOf } from '@/components/ui/pagination'
 import { RemoteImage } from '@/components/ui/remote-image'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeadNumber,
+  TableHeader,
+  TableRow,
+  TableRowNumber,
+} from '@/components/ui/table'
 import {
   useAdminCategoriesQuery,
   useAdminProductsQuery,
@@ -119,6 +128,7 @@ function ProductsList() {
           <Table>
             <TableHeader>
               <TableRow>
+                <TableHeadNumber />
                 <TableHead>Sản phẩm</TableHead>
                 <TableHead>Danh mục</TableHead>
                 <TableHead className="text-right">Giá từ</TableHead>
@@ -129,8 +139,9 @@ function ProductsList() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {query.data.items.map((p) => (
+              {query.data.items.map((p, index) => (
                 <TableRow key={p.id}>
+                  <TableRowNumber index={index} page={page} pageSize={PAGE_SIZE} />
                   <TableCell>
                     <div className="flex items-center gap-3">
                       <RemoteImage

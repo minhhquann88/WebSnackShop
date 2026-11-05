@@ -14,7 +14,9 @@ export default async function ProductsPage({ searchParams }: { searchParams: Sea
   const search = params.search?.trim().slice(0, 100) || undefined
   return (
     <div className="grid gap-6">
-      <h1 className="text-2xl font-bold">{search ? `Kết quả cho "${search}"` : 'Tất cả sản phẩm'}</h1>
+      <h1 className="font-display text-3xl leading-none font-extrabold">
+        {search ? `Kết quả cho "${search}"` : 'Tất cả sản phẩm'}
+      </h1>
       <ProductListing
         basePath="/san-pham"
         search={search}

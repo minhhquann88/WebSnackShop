@@ -13,7 +13,7 @@ export function AuthCard({ title, description, children, footer }: AuthCardProps
     <div className="mx-auto grid w-full max-w-md gap-4 py-4">
       <Card>
         <CardHeader>
-          <h1 className="text-2xl font-semibold">{title}</h1>
+          <h1 className="font-display text-3xl leading-none font-extrabold">{title}</h1>
           {description ? <CardDescription>{description}</CardDescription> : null}
         </CardHeader>
         {children}

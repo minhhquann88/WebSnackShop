@@ -51,7 +51,7 @@ export default function CartPage() {
   if (cart.isLoading) {
     return (
       <div className="grid gap-3">
-        <h1 className="text-2xl font-bold">Giỏ hàng</h1>
+        <h1 className="font-display text-3xl leading-none font-extrabold">Giỏ hàng</h1>
         <Skeleton className="h-24" />
         <Skeleton className="h-24" />
       </div>
@@ -63,7 +63,7 @@ export default function CartPage() {
   if (cart.items.length === 0) {
     return (
       <div className="grid gap-4">
-        <h1 className="text-2xl font-bold">Giỏ hàng</h1>
+        <h1 className="font-display text-3xl leading-none font-extrabold">Giỏ hàng</h1>
         <EmptyState
           title="Giỏ hàng đang trống"
           description="Khám phá các món ăn vặt hấp dẫn và thêm vào giỏ nhé."
@@ -110,7 +110,7 @@ export default function CartPage() {
 
   return (
     <div className="grid gap-6">
-      <h1 className="text-2xl font-bold">Giỏ hàng ({cart.itemCount})</h1>
+      <h1 className="font-display text-3xl leading-none font-extrabold">Giỏ hàng ({cart.itemCount})</h1>
       <div className="grid gap-6 lg:grid-cols-[1fr_340px]">
         <ul className="grid content-start gap-3" aria-label="Sản phẩm trong giỏ">
           {lines.map((line) => {
@@ -133,7 +133,7 @@ export default function CartPage() {
                     <div className="min-w-0">
                       <Link
                         href={`/san-pham/${line.productSlug}`}
-                        className="line-clamp-2 font-medium hover:text-primary"
+                        className="line-clamp-2 font-semibold hover:text-chili-deep"
                       >
                         {line.productName}
                       </Link>
@@ -161,7 +161,9 @@ export default function CartPage() {
                       label={`Số lượng ${line.productName}`}
                     />
                     <div className="text-right">
-                      <p className="font-semibold">{formatVnd(line.lineTotal)}</p>
+                      <p className="font-display text-lg font-extrabold text-chili-deep tabular-nums">
+                        {formatVnd(line.lineTotal)}
+                      </p>
                       {line.unitPrice !== null && line.quantity > 1 ? (
                         <p className="text-xs text-muted-foreground">{formatVnd(line.unitPrice)} / sp</p>
                       ) : null}

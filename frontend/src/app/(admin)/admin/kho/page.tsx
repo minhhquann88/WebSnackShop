@@ -13,7 +13,16 @@ import { EmptyState, ErrorState, Spinner } from '@/components/ui/feedback'
 import { Checkbox, Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Pagination, totalPagesOf } from '@/components/ui/pagination'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeadNumber,
+  TableHeader,
+  TableRow,
+  TableRowNumber,
+} from '@/components/ui/table'
 import { useStockQuery } from '@/features/admin/inventory/queries'
 import type { Schemas } from '@/lib/api/types'
 import { getErrorMessage } from '@/lib/errors'
@@ -84,6 +93,7 @@ function Inventory() {
           <Table>
             <TableHeader>
               <TableRow>
+                <TableHeadNumber />
                 <TableHead>Sản phẩm</TableHead>
                 <TableHead>SKU</TableHead>
                 <TableHead className="text-right">Tồn</TableHead>
@@ -96,8 +106,9 @@ function Inventory() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {query.data.items.map((s) => (
+              {query.data.items.map((s, index) => (
                 <TableRow key={s.variantId}>
+                  <TableRowNumber index={index} page={page} pageSize={PAGE_SIZE} />
                   <TableCell>
                     <p className="font-medium">{s.productName}</p>
                     <p className="text-xs text-muted-foreground">{s.variantName}</p>

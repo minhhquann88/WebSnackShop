@@ -49,6 +49,7 @@ export function SimpleBarChart({
             formatter={(value) => [formatValue(Number(value)), seriesLabel]}
             contentStyle={{
               borderRadius: 8,
+              fontFamily: 'var(--font-be-vietnam)',
               border: '1px solid var(--border)',
               background: 'var(--popover)',
               color: 'var(--popover-foreground)',

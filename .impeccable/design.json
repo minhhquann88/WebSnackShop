@@ -1,0 +1,313 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-05T00:00:00+07:00",
+  "title": "Design System: SnackShop",
+  "extensions": {
+    "colorMeta": {
+      "chili": {
+        "role": "primary",
+        "displayName": "Ớt",
+        "canonical": "oklch(0.67 0.21 32)",
+        "tonalRamp": ["oklch(0.15 0.06 32)", "oklch(0.28 0.11 31)", "oklch(0.4 0.15 30)", "oklch(0.5 0.19 29)", "oklch(0.67 0.21 32)", "oklch(0.78 0.14 33)", "oklch(0.88 0.08 34)", "oklch(0.95 0.04 35)"]
+      },
+      "chili-deep": {
+        "role": "primary",
+        "displayName": "Ớt đậm",
+        "canonical": "oklch(0.5 0.19 29)",
+        "tonalRamp": ["oklch(0.15 0.06 29)", "oklch(0.28 0.11 29)", "oklch(0.4 0.15 30)", "oklch(0.5 0.19 29)", "oklch(0.62 0.19 30)", "oklch(0.75 0.14 31)", "oklch(0.87 0.08 33)", "oklch(0.95 0.04 35)"]
+      },
+      "chili-shadow": {
+        "role": "primary",
+        "displayName": "Bóng ớt (overprint, màn phủ)",
+        "canonical": "oklch(0.4 0.15 30)",
+        "tonalRamp": ["oklch(0.15 0.06 30)", "oklch(0.25 0.1 30)", "oklch(0.4 0.15 30)", "oklch(0.5 0.19 29)", "oklch(0.62 0.19 30)", "oklch(0.75 0.14 31)", "oklch(0.87 0.08 33)", "oklch(0.95 0.04 35)"]
+      },
+      "chili-tint": {
+        "role": "primary",
+        "displayName": "Ớt nhuộm",
+        "canonical": "oklch(0.95 0.04 35)",
+        "tonalRamp": ["oklch(0.15 0.03 35)", "oklch(0.28 0.05 35)", "oklch(0.42 0.07 35)", "oklch(0.56 0.08 35)", "oklch(0.7 0.08 35)", "oklch(0.82 0.07 35)", "oklch(0.9 0.05 35)", "oklch(0.95 0.04 35)"]
+      },
+      "mango": {
+        "role": "secondary",
+        "displayName": "Xoài",
+        "canonical": "oklch(0.86 0.17 88)",
+        "tonalRamp": ["oklch(0.15 0.04 85)", "oklch(0.28 0.07 84)", "oklch(0.42 0.09 80)", "oklch(0.56 0.12 83)", "oklch(0.7 0.15 85)", "oklch(0.78 0.17 85)", "oklch(0.86 0.17 88)", "oklch(0.96 0.07 92)"]
+      },
+      "mango-deep": {
+        "role": "secondary",
+        "displayName": "Xoài đậm",
+        "canonical": "oklch(0.78 0.17 85)",
+        "tonalRamp": ["oklch(0.15 0.04 85)", "oklch(0.28 0.07 84)", "oklch(0.42 0.09 80)", "oklch(0.56 0.12 83)", "oklch(0.68 0.15 85)", "oklch(0.78 0.17 85)", "oklch(0.88 0.14 88)", "oklch(0.96 0.07 92)"]
+      },
+      "mango-text": {
+        "role": "secondary",
+        "displayName": "Chữ trên xoài nhạt",
+        "canonical": "oklch(0.42 0.09 80)",
+        "tonalRamp": ["oklch(0.15 0.04 80)", "oklch(0.28 0.07 80)", "oklch(0.42 0.09 80)", "oklch(0.56 0.11 80)", "oklch(0.7 0.12 82)", "oklch(0.8 0.12 85)", "oklch(0.9 0.09 88)", "oklch(0.96 0.05 92)"]
+      },
+      "mango-tint": {
+        "role": "secondary",
+        "displayName": "Xoài nhuộm",
+        "canonical": "oklch(0.96 0.07 92)",
+        "tonalRamp": ["oklch(0.15 0.03 92)", "oklch(0.28 0.05 92)", "oklch(0.42 0.07 92)", "oklch(0.56 0.09 92)", "oklch(0.7 0.1 92)", "oklch(0.82 0.1 92)", "oklch(0.9 0.09 92)", "oklch(0.96 0.07 92)"]
+      },
+      "pandan": {
+        "role": "tertiary",
+        "displayName": "Lá dứa",
+        "canonical": "oklch(0.62 0.15 152)",
+        "tonalRamp": ["oklch(0.15 0.05 152)", "oklch(0.27 0.09 152)", "oklch(0.38 0.12 152)", "oklch(0.5 0.14 152)", "oklch(0.62 0.15 152)", "oklch(0.74 0.12 152)", "oklch(0.86 0.08 152)", "oklch(0.95 0.05 152)"]
+      },
+      "pandan-deep": {
+        "role": "tertiary",
+        "displayName": "Lá dứa đậm",
+        "canonical": "oklch(0.5 0.14 152)",
+        "tonalRamp": ["oklch(0.15 0.05 152)", "oklch(0.27 0.09 152)", "oklch(0.38 0.12 152)", "oklch(0.5 0.14 152)", "oklch(0.62 0.15 152)", "oklch(0.74 0.12 152)", "oklch(0.86 0.08 152)", "oklch(0.95 0.05 152)"]
+      },
+      "pandan-tint": {
+        "role": "tertiary",
+        "displayName": "Lá dứa nhuộm",
+        "canonical": "oklch(0.95 0.05 152)",
+        "tonalRamp": ["oklch(0.15 0.03 152)", "oklch(0.28 0.05 152)", "oklch(0.42 0.07 152)", "oklch(0.56 0.08 152)", "oklch(0.7 0.08 152)", "oklch(0.82 0.07 152)", "oklch(0.9 0.06 152)", "oklch(0.95 0.05 152)"]
+      },
+      "cobalt": {
+        "role": "tertiary",
+        "displayName": "Cô-ban",
+        "canonical": "oklch(0.5 0.21 264)",
+        "tonalRamp": ["oklch(0.15 0.08 264)", "oklch(0.25 0.13 264)", "oklch(0.34 0.17 264)", "oklch(0.42 0.19 264)", "oklch(0.5 0.21 264)", "oklch(0.65 0.16 264)", "oklch(0.8 0.09 264)", "oklch(0.94 0.04 264)"]
+      },
+      "cobalt-deep": {
+        "role": "tertiary",
+        "displayName": "Cô-ban đậm",
+        "canonical": "oklch(0.42 0.19 264)",
+        "tonalRamp": ["oklch(0.15 0.08 264)", "oklch(0.25 0.13 264)", "oklch(0.34 0.17 264)", "oklch(0.42 0.19 264)", "oklch(0.5 0.21 264)", "oklch(0.65 0.16 264)", "oklch(0.8 0.09 264)", "oklch(0.94 0.04 264)"]
+      },
+      "cobalt-tint": {
+        "role": "tertiary",
+        "displayName": "Cô-ban nhuộm",
+        "canonical": "oklch(0.94 0.04 264)",
+        "tonalRamp": ["oklch(0.15 0.03 264)", "oklch(0.28 0.05 264)", "oklch(0.42 0.07 264)", "oklch(0.56 0.08 264)", "oklch(0.7 0.07 264)", "oklch(0.82 0.06 264)", "oklch(0.9 0.05 264)", "oklch(0.94 0.04 264)"]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Kem (kệ hàng)",
+        "canonical": "oklch(0.98 0.02 85)",
+        "tonalRamp": ["oklch(0.15 0.01 85)", "oklch(0.28 0.015 85)", "oklch(0.42 0.02 85)", "oklch(0.56 0.025 85)", "oklch(0.7 0.03 85)", "oklch(0.85 0.03 85)", "oklch(0.95 0.03 85)", "oklch(0.98 0.02 85)"]
+      },
+      "cream-2": {
+        "role": "neutral",
+        "displayName": "Kem đậm",
+        "canonical": "oklch(0.95 0.03 85)",
+        "tonalRamp": ["oklch(0.15 0.01 85)", "oklch(0.28 0.015 85)", "oklch(0.42 0.02 85)", "oklch(0.56 0.025 85)", "oklch(0.7 0.03 85)", "oklch(0.85 0.03 85)", "oklch(0.95 0.03 85)", "oklch(0.98 0.02 85)"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Giấy (hộp trắng)",
+        "canonical": "oklch(1 0 0)",
+        "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.25 0 0)", "oklch(0.4 0 0)", "oklch(0.55 0 0)", "oklch(0.7 0 0)", "oklch(0.85 0 0)", "oklch(0.95 0 0)", "oklch(1 0 0)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Mực",
+        "canonical": "oklch(0.22 0.012 60)",
+        "tonalRamp": ["oklch(0.15 0.01 60)", "oklch(0.22 0.012 60)", "oklch(0.35 0.02 60)", "oklch(0.48 0.03 60)", "oklch(0.62 0.03 60)", "oklch(0.78 0.03 70)", "oklch(0.9 0.035 80)", "oklch(0.98 0.02 85)"]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Mực nhạt",
+        "canonical": "oklch(0.48 0.03 60)",
+        "tonalRamp": ["oklch(0.15 0.01 60)", "oklch(0.22 0.012 60)", "oklch(0.35 0.02 60)", "oklch(0.48 0.03 60)", "oklch(0.62 0.03 60)", "oklch(0.78 0.03 70)", "oklch(0.9 0.035 80)", "oklch(0.98 0.02 85)"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Đường kẻ (viền mặc định)",
+        "canonical": "oklch(0.9 0.035 80)",
+        "tonalRamp": ["oklch(0.15 0.015 80)", "oklch(0.28 0.025 80)", "oklch(0.42 0.03 80)", "oklch(0.56 0.035 80)", "oklch(0.7 0.04 80)", "oklch(0.8 0.04 75)", "oklch(0.9 0.035 80)", "oklch(0.97 0.02 85)"]
+      },
+      "input": {
+        "role": "neutral",
+        "displayName": "Viền ô nhập",
+        "canonical": "oklch(0.8 0.04 75)",
+        "tonalRamp": ["oklch(0.15 0.015 75)", "oklch(0.28 0.025 75)", "oklch(0.42 0.03 75)", "oklch(0.56 0.035 75)", "oklch(0.7 0.04 75)", "oklch(0.8 0.04 75)", "oklch(0.9 0.035 80)", "oklch(0.97 0.02 85)"]
+      },
+      "on-colour": {
+        "role": "neutral",
+        "displayName": "Chữ trên màu",
+        "canonical": "oklch(0.995 0 0)",
+        "tonalRamp": ["oklch(0.15 0 0)", "oklch(0.25 0 0)", "oklch(0.4 0 0)", "oklch(0.55 0 0)", "oklch(0.7 0 0)", "oklch(0.85 0 0)", "oklch(0.95 0 0)", "oklch(0.995 0 0)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (mặt gói hero)", "purpose": "Tiêu đề 'Tối nay ăn vặt gì?' trên gói ớt; 48/60/72px theo breakpoint, overprint 3px. Một lần, chỉ trang chủ." },
+      "headline": { "displayName": "Headline (trên gói)", "purpose": "h1 mặt gói chi tiết sản phẩm và nhãn kệ danh mục; 36/48px, overprint-sm 2px." },
+      "headline-page": { "displayName": "Headline trang (trên kem)", "purpose": "h1 các trang nền kem (Giỏ hàng, Thanh toán, Đơn hàng, PageHeader admin) và h2 section trang chủ; không bóng." },
+      "title": { "displayName": "Title", "purpose": "Tên danh mục trong gói danh mục, tên tiệm admin, tên khách, 'Mô tả sản phẩm'." },
+      "title-sm": { "displayName": "Title nhỏ", "purpose": "CardTitle, DialogTitle, EmptyState, tiêu đề cột footer, 'Thông tin chuyển khoản'." },
+      "figure": { "displayName": "Con số", "purpose": "StatTile 30px; doanh thu 48px; tổng đơn 24px; dòng giỏ 18px. Luôn tabular-nums." },
+      "price": { "displayName": "Giá", "purpose": "PriceTag 20px (36px lg) ớt đậm; chữ trong tem giá 11–18px." },
+      "body": { "displayName": "Body", "purpose": "Mô tả dài, địa chỉ, đoạn giới thiệu hero; max-w-prose." },
+      "body-sm": { "displayName": "Body nhỏ (UI)", "purpose": "Ô nhập, ô bảng, nav (600), tên sản phẩm trong giỏ (600), nhãn form (500)." },
+      "button": { "displayName": "Nút / pill", "purpose": "Nút 14px 700; sm 12px; lg 16px; pill 'Chọn mua' 12px 800." },
+      "caption": { "displayName": "Caption", "purpose": "Mô tả ngắn trên gói, thời gian, 'Đã bán', số sản phẩm (600), sticker (700)." },
+      "label": { "displayName": "Label (in hoa)", "purpose": "Đầu cột bảng admin, tem trạng thái, nhãn 'Quầy'." },
+      "seal": { "displayName": "Con dấu ngôi sao", "purpose": "Chữ IN HOA trong Seal 'Bán chạy'/'Hết hàng', 8–9,6px." }
+    },
+    "shadows": [
+      { "name": "shadow-bag", "value": "0 18px 30px -14px oklch(0.3 0.06 40 / 0.45)", "purpose": "Gói nhấc khỏi kệ: utility lift khi hover/focus trên gói danh mục, gói sản phẩm, StatTile có liên kết." },
+      { "name": "shadow-float", "value": "0 24px 48px -16px oklch(0.3 0.06 40 / 0.4)", "purpose": "DialogContent và drawer admin; kèm màn chili-shadow 40% + backdrop-blur 2px. Hai giá trị này là toàn bộ bóng của hệ thống." },
+      { "name": "overprint", "value": "text-shadow: 3px 3px 0 var(--chili-shadow)", "purpose": "Bóng chữ lệch cứng cho tên tiệm và tiêu đề hero trên gói màu; overprint-sm là 2px 2px." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Ease-out duy nhất: lift, ảnh hero phóng nhẹ. --ease-pop cùng giá trị, dùng cho bump." },
+      { "name": "lift", "value": "transform, box-shadow 240ms var(--ease-out); hover/focus-visible/focus-within → translateY(-3px) rotate(-0.6deg) + shadow-bag", "purpose": "Gói được nhấc khỏi kệ. Tắt khi prefers-reduced-motion." },
+      { "name": "bump", "value": "bump 360ms var(--ease-pop) (scale 1 → 1.22 ở 40% → 1)", "purpose": "Viên giỏ hàng nảy một lần khi số món tăng. Tắt khi prefers-reduced-motion." },
+      { "name": "state-change", "value": "color, background-color, border-color, transform, box-shadow 150ms", "purpose": "Nút, pill, hàng bảng đổi màu; nút active translateY(1px)." },
+      { "name": "hero-disc", "value": "transform 300ms ease-out; hover scale(1.05)", "purpose": "Đĩa ảnh sản phẩm nổi bật lòi khỏi góc gói hero." },
+      { "name": "dialog-enter", "value": "fade-in + zoom-in-98 (tw-animate-css)", "purpose": "Dialog vào/ra; overlay fade." },
+      { "name": "skeleton", "value": "animate-pulse", "purpose": "Khối đang tải màu cream-2." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ],
+    "surfaces": [
+      { "name": "stripes", "value": "repeating-linear-gradient(45deg, chili 0 28px, mango 28px 56px)", "purpose": "Băng thương hiệu: header storefront 72px." },
+      { "name": "stripes-sm", "value": "repeating-linear-gradient(45deg, chili 0 10px, mango 10px 20px)", "purpose": "Dải mỏng: mép ép của mỗi gói (16–20px), dải trên footer (12px) và admin (10px)." },
+      { "name": "crimp", "value": "mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 12px 100%", "purpose": "Răng cưa mép dưới dải ép, như gói hàn nhiệt." },
+      { "name": "bag", "value": "border-radius 28px, overflow hidden, isolation, ::before gradient 120° trắng 16% → 0 ở 45%", "purpose": "Mặt gói màu: danh mục, sản phẩm, chi tiết, hero. Vệt ánh bạc là gradient duy nhất ngoài sọc." },
+      { "name": "burst", "value": "clip-path polygon 24 cánh", "purpose": "Ngôi sao ưu đãi (144/176px) và Seal nhỏ (44/56px)." },
+      { "name": "stamp", "value": "đĩa aspect-ratio 1, nền paper, viền 3px currentColor, Baloo 2 800, line-height 1.05, đệm 4px", "purpose": "Tem giá tròn trên gói; màu viền là rim của gói." },
+      { "name": "step-disc", "value": "đĩa 28px nền chili, chữ trắng Baloo 2 800 15px", "purpose": "Số bước thanh toán và timeline đơn." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Nút chính (ớt trên kem)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Hành động chính trên nền kem/giấy: Đặt hàng, Tiến hành thanh toán, Lưu. Viên tròn ớt chữ trắng.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Đặt hàng</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; height: 2.5rem; padding: 0.5rem 1.25rem; border: 1px solid transparent; border-radius: 9999px; font-family: var(--font-be-vietnam), 'Be Vietnam Pro', system-ui, sans-serif; font-size: 0.875rem; font-weight: 700; line-height: 1.25rem; white-space: nowrap; cursor: pointer; outline: none; transition: color 150ms, background-color 150ms, border-color 150ms, transform 150ms, box-shadow 150ms; } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 40%, transparent); } .ds-btn:disabled { pointer-events: none; opacity: 0.5; } .ds-btn-primary { background: var(--chili); color: var(--primary-foreground); } .ds-btn-primary:hover { background: var(--chili-deep); }"
+    },
+    {
+      "name": "Nút xoài (secondary, trên gói màu)",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Hành động chính khi đặt trên gói màu: Xem thực đơn, Mua ngay, viên giỏ hàng. Xoài chữ mực.",
+      "html": "<div class=\"ds-on-bag\"><button class=\"ds-btn ds-btn-secondary\">Mua ngay</button><button class=\"ds-btn ds-btn-outline-bag\">Thêm vào giỏ</button></div>",
+      "css": ".ds-on-bag { display: inline-flex; gap: 0.5rem; padding: 1rem; border-radius: 28px; background: var(--chili); } .ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; height: 3rem; padding: 0 1.75rem; border: 1px solid transparent; border-radius: 9999px; font-family: var(--font-be-vietnam), 'Be Vietnam Pro', system-ui, sans-serif; font-size: 1rem; font-weight: 700; white-space: nowrap; cursor: pointer; outline: none; transition: color 150ms, background-color 150ms, border-color 150ms, transform 150ms, box-shadow 150ms; } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { box-shadow: 0 0 0 3px rgba(255,255,255,0.5); } .ds-btn-secondary { background: var(--mango); color: var(--ink); } .ds-btn-secondary:hover { background: var(--mango-deep); } .ds-btn-outline-bag { background: transparent; border-color: rgba(255,255,255,0.6); color: var(--primary-foreground); } .ds-btn-outline-bag:hover { border-color: #fff; background: rgba(255,255,255,0.15); }"
+    },
+    {
+      "name": "Nút viền và ghost (trên giấy)",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Hành động thứ cấp trên kem/giấy: phân trang, Đăng xuất, Thử lại; ghost cho icon và hành động phụ.",
+      "html": "<div class=\"ds-row\"><button class=\"ds-btn ds-btn-outline\">Đăng xuất</button><button class=\"ds-btn ds-btn-ghost\">Xem cửa hàng</button><button class=\"ds-btn ds-btn-destructive\">Hủy đơn</button></div>",
+      "css": ".ds-row { display: inline-flex; gap: 0.5rem; font-family: var(--font-be-vietnam), 'Be Vietnam Pro', system-ui, sans-serif; } .ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; height: 2.5rem; padding: 0.5rem 1.25rem; border: 1px solid transparent; border-radius: 9999px; font-size: 0.875rem; font-weight: 700; line-height: 1.25rem; white-space: nowrap; cursor: pointer; outline: none; transition: color 150ms, background-color 150ms, border-color 150ms, transform 150ms, box-shadow 150ms, filter 150ms; } .ds-btn:active { transform: translateY(1px); } .ds-btn:focus-visible { box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 40%, transparent); } .ds-btn-outline { background: var(--card); border-color: color-mix(in oklch, var(--foreground) 25%, transparent); color: var(--foreground); } .ds-btn-outline:hover { border-color: var(--foreground); background: var(--cream-2); } .ds-btn-ghost { background: transparent; color: var(--foreground); } .ds-btn-ghost:hover { background: var(--cream-2); color: var(--chili-deep); } .ds-btn-destructive { background: var(--destructive); color: var(--destructive-foreground); } .ds-btn-destructive:hover { filter: brightness(0.9); }"
+    },
+    {
+      "name": "Ô nhập",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Dải trắng viền ấm 70%; viền chuyển sang ớt khi focus, ớt đậm khi lỗi.",
+      "html": "<label class=\"ds-label\" for=\"ds-q\">Số điện thoại <span class=\"ds-req\">*</span></label><input id=\"ds-q\" class=\"ds-input\" placeholder=\"0900 000 000\" />",
+      "css": ".ds-label { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.375rem; font-family: var(--font-be-vietnam), 'Be Vietnam Pro', system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; line-height: 1; color: var(--foreground); } .ds-req { color: var(--destructive); } .ds-input { width: 100%; min-width: 0; height: 2.5rem; padding: 0.5rem 0.75rem; border: 1px solid color-mix(in oklch, var(--input) 70%, transparent); border-radius: 10px; background: var(--card); color: var(--foreground); font-family: var(--font-be-vietnam), 'Be Vietnam Pro', system-ui, sans-serif; font-size: 0.875rem; outline: none; transition: border-color 150ms, box-shadow 150ms; } .ds-input::placeholder { color: var(--muted-foreground); } .ds-input:hover { border-color: var(--input); } .ds-input:focus-visible { border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 25%, transparent); } .ds-input[aria-invalid='true'] { border-color: var(--destructive); box-shadow: 0 0 0 3px color-mix(in oklch, var(--destructive) 20%, transparent); } .ds-input:disabled { cursor: not-allowed; background: var(--muted); opacity: 0.7; }"
+    },
+    {
+      "name": "Băng sọc và pill danh mục",
+      "kind": "nav",
+      "refersTo": "category-pill-active",
+      "description": "Header: băng sọc chéo 45° với tên tiệm overprint, ô tìm kiếm trắng, viên giỏ hàng xoài; dưới là hàng pill danh mục, pill đang chọn tô màu bao bì.",
+      "html": "<header class=\"ds-header\"><div class=\"ds-band\"><span class=\"ds-brand\">SnackShop</span><div class=\"ds-search\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input placeholder=\"Tìm khô gà, bánh tráng...\" /></div><a class=\"ds-cart\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 10a4 4 0 0 1-8 0\"/><path d=\"M3.103 6.034h17.794\"/><path d=\"M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z\"/></svg>2</a></div><nav class=\"ds-pills\"><a class=\"ds-pill ds-pill-pandan\" href=\"#\" aria-current=\"page\">Tất cả</a><a class=\"ds-pill\" href=\"#\">Khô gà &amp; khô bò</a><a class=\"ds-pill\" href=\"#\">Bánh tráng</a><a class=\"ds-pill\" href=\"#\">Hạt &amp; trái cây sấy</a></nav></header>",
+      "css": ".ds-header { font-family: var(--font-be-vietnam), 'Be Vietnam Pro', system-ui, sans-serif; border-radius: 12px; overflow: hidden; } .ds-band { display: flex; align-items: center; gap: 1rem; height: 72px; padding: 0 1.25rem; background-color: var(--chili); background-image: repeating-linear-gradient(45deg, var(--chili) 0 28px, var(--mango) 28px 56px); color: var(--primary-foreground); } .ds-brand { font-family: var(--font-baloo), 'Baloo 2', system-ui, sans-serif; font-size: 2.25rem; font-weight: 800; line-height: 1; text-shadow: 3px 3px 0 var(--chili-shadow); } .ds-search { position: relative; flex: 1; max-width: 28rem; color: var(--muted-foreground); } .ds-search svg { position: absolute; left: 0.875rem; top: 50%; transform: translateY(-50%); pointer-events: none; } .ds-search input { width: 100%; height: 2.75rem; padding: 0 1rem 0 2.5rem; border: 2px solid transparent; border-radius: 9999px; background: var(--card); color: var(--foreground); font: inherit; font-size: 0.875rem; outline: none; } .ds-search input:focus-visible { border-color: var(--mango); } .ds-cart { margin-left: auto; display: inline-flex; align-items: center; gap: 0.5rem; height: 2.5rem; padding: 0 1rem; border-radius: 9999px; background: var(--mango); color: var(--ink); font-size: 0.875rem; font-weight: 700; text-decoration: none; font-variant-numeric: tabular-nums; transition: background-color 150ms; } .ds-cart:hover { background: var(--mango-deep); } .ds-pills { display: flex; gap: 0.5rem; padding: 0.625rem 1.25rem; border-bottom: 1px solid var(--border); background: color-mix(in oklch, var(--cream) 92%, transparent); overflow-x: auto; } .ds-pill { display: inline-flex; align-items: center; height: 2.25rem; padding: 0 1rem; border: 2px solid color-mix(in oklch, var(--foreground) 15%, transparent); border-radius: 9999px; background: var(--card); color: var(--foreground); font-size: 0.875rem; font-weight: 700; white-space: nowrap; text-decoration: none; transition: color 150ms, border-color 150ms, background-color 150ms; } .ds-pill:hover { border-color: color-mix(in oklch, var(--foreground) 60%, transparent); } .ds-pill:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 40%, transparent); } .ds-pill[aria-current='page'] { border-color: transparent; color: var(--primary-foreground); } .ds-pill-pandan[aria-current='page'] { background: var(--pandan); }"
+    },
+    {
+      "name": "Sticker và tem (Badge)",
+      "kind": "chip",
+      "refersTo": "badge-stamp",
+      "description": "Sticker (bo 8px, nền nhuộm) cho nhãn số liệu; tem (viên màu đặc, IN HOA) cho trạng thái đơn và thanh toán.",
+      "html": "<div class=\"ds-badges\"><span class=\"ds-sticker ds-sticker-warning\">3</span><span class=\"ds-sticker ds-sticker-destructive\">0</span><span class=\"ds-stamp ds-stamp-warning\">Chờ xác nhận</span><span class=\"ds-stamp ds-stamp-info\">Đang chuẩn bị</span><span class=\"ds-stamp ds-stamp-secondary\">Đang giao</span><span class=\"ds-stamp ds-stamp-success\">Đã giao</span><span class=\"ds-stamp ds-stamp-destructive\">Đã hủy</span><span class=\"ds-stamp ds-stamp-muted\">Đã hoàn tiền</span></div>",
+      "css": ".ds-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; font-family: var(--font-be-vietnam), 'Be Vietnam Pro', system-ui, sans-serif; } .ds-sticker { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.125rem 0.5rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; line-height: 1rem; white-space: nowrap; } .ds-sticker-warning { background: var(--mango-tint); color: var(--mango-text); } .ds-sticker-destructive { background: var(--chili-tint); color: var(--chili-deep); } .ds-stamp { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.25rem 0.625rem; border-radius: 9999px; font-size: 11px; font-weight: 800; letter-spacing: 0.025em; line-height: 1; text-transform: uppercase; white-space: nowrap; } .ds-stamp-warning, .ds-stamp-secondary { background: var(--mango); color: var(--ink); } .ds-stamp-info { background: var(--cobalt); color: var(--primary-foreground); } .ds-stamp-success { background: var(--pandan); color: var(--primary-foreground); } .ds-stamp-destructive { background: var(--chili-deep); color: var(--primary-foreground); } .ds-stamp-muted { background: var(--cream-2); color: var(--muted-foreground); }"
+    },
+    {
+      "name": "Gói sản phẩm (bag + tem giá + seal)",
+      "kind": "card",
+      "refersTo": "bag",
+      "description": "Một gói snack trên kệ: mảng màu bo 28px với dải ép răng cưa, đĩa ảnh, tem giá tròn viền màu, pill 'Chọn mua' trắng, con dấu ngôi sao 'Bán chạy'. Hover nhấc gói khỏi kệ.",
+      "html": "<a class=\"ds-bag ds-bag-pandan\" href=\"#\"><span class=\"ds-seal-strip\" aria-hidden=\"true\"></span><div class=\"ds-bag-top\"><span class=\"ds-disc\"></span><span class=\"ds-stamp-price\"><span>25.000 ₫</span><span class=\"ds-off\">-17%</span></span></div><h3 class=\"ds-bag-name\">Bánh tráng trộn Tây Ninh</h3><p class=\"ds-bag-desc\">Bánh tráng trộn đủ topping, sốt me.</p><div class=\"ds-bag-foot\"><span class=\"ds-pill-buy\">Chọn mua</span><span class=\"ds-seal\">Bán<br>chạy</span></div></a>",
+      "css": ".ds-bag { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; gap: 0.75rem; width: 15rem; padding: 1.75rem 1rem 1rem; border-radius: 28px; text-decoration: none; font-family: var(--font-be-vietnam), 'Be Vietnam Pro', system-ui, sans-serif; transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-bag::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(120deg, rgba(255,255,255,0.16), rgba(255,255,255,0) 45%); pointer-events: none; } .ds-bag-pandan { background: var(--pandan); color: var(--primary-foreground); } .ds-bag:hover, .ds-bag:focus-visible { transform: translateY(-3px) rotate(-0.6deg); box-shadow: 0 18px 30px -14px oklch(0.3 0.06 40 / 0.45); } .ds-bag:focus-visible { outline: none; box-shadow: 0 18px 30px -14px oklch(0.3 0.06 40 / 0.45), 0 0 0 3px color-mix(in oklch, var(--ring) 40%, transparent); } .ds-seal-strip { position: absolute; inset: 0 0 auto 0; height: 1rem; background-color: var(--chili); background-image: repeating-linear-gradient(45deg, var(--chili) 0 10px, var(--mango) 10px 20px); mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 12px 100%; -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 12px 100%; } .ds-bag-top { position: relative; padding-right: 4rem; } .ds-disc { display: block; width: 7rem; height: 7rem; border-radius: 9999px; background: var(--card); box-shadow: 0 0 0 4px rgba(255,255,255,0.6); } .ds-stamp-price { position: absolute; top: 0; right: 0; z-index: 10; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; width: 5rem; aspect-ratio: 1; padding: 0.25rem; border-radius: 9999px; background: var(--paper); border: 3px solid var(--pandan); color: var(--foreground); font-family: var(--font-baloo), 'Baloo 2', system-ui, sans-serif; font-size: 0.875rem; font-weight: 800; line-height: 1.05; text-align: center; font-variant-numeric: tabular-nums; white-space: nowrap; } .ds-off { font-size: 11px; font-weight: 700; color: var(--chili-deep); } .ds-bag-name { margin: 0; font-size: 1.125rem; font-weight: 700; line-height: 1.375; } .ds-bag-desc { margin: 0; font-size: 0.75rem; color: rgba(255,255,255,0.95); } .ds-bag-foot { position: relative; display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-right: 4rem; } .ds-pill-buy { display: inline-flex; align-items: center; height: 2rem; padding: 0 0.875rem; border-radius: 9999px; background: var(--card); color: var(--pandan-deep); font-size: 0.75rem; font-weight: 800; white-space: nowrap; transition: background-color 150ms, color 150ms; } .ds-bag:hover .ds-pill-buy { background: var(--mango); color: var(--foreground); } .ds-seal { position: absolute; right: 0; bottom: 0; display: inline-flex; align-items: center; justify-content: center; width: 3.5rem; height: 3.5rem; padding: 0.4rem; background: var(--mango); color: var(--foreground); font-family: var(--font-baloo), 'Baloo 2', system-ui, sans-serif; font-size: 0.6rem; font-weight: 800; line-height: 1.05; letter-spacing: 0.02em; text-transform: uppercase; text-align: center; clip-path: polygon(50% 0%, 59.8% 13.3%, 75% 6.7%, 76.9% 23.1%, 93.3% 25%, 86.7% 40.2%, 100% 50%, 86.7% 59.8%, 93.3% 75%, 76.9% 76.9%, 75% 93.3%, 59.8% 86.7%, 50% 100%, 40.2% 86.7%, 25% 93.3%, 23.1% 76.9%, 6.7% 75%, 13.3% 59.8%, 0% 50%, 13.3% 40.2%, 6.7% 25%, 23.1% 23.1%, 25% 6.7%, 40.2% 13.3%); } @media (prefers-reduced-motion: reduce) { .ds-bag, .ds-bag:hover { transition: none; transform: none; } }"
+    },
+    {
+      "name": "Hộp giấy (Card) với số bước",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Hộp trắng trên kệ kem: viền 1px rule, bo 16px, không bóng. Tiêu đề Baloo 2; bước thanh toán đặt đĩa số ớt trước tiêu đề.",
+      "html": "<section class=\"ds-card\"><h2 class=\"ds-card-title\"><span class=\"ds-step\" aria-hidden=\"true\">1</span>Thông tin liên hệ</h2><p class=\"ds-card-desc\">Email nhận thông báo đơn hàng.</p><input class=\"ds-input\" placeholder=\"ban@example.com\" /></section>",
+      "css": ".ds-card { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem; border: 1px solid var(--border); border-radius: 16px; background: var(--card); color: var(--card-foreground); font-family: var(--font-be-vietnam), 'Be Vietnam Pro', system-ui, sans-serif; } .ds-card-title { display: flex; align-items: center; margin: 0; font-family: var(--font-baloo), 'Baloo 2', system-ui, sans-serif; font-size: 1.25rem; font-weight: 800; line-height: 1.25; text-wrap: balance; } .ds-step { display: inline-flex; align-items: center; justify-content: center; width: 1.75rem; height: 1.75rem; margin-right: 0.5rem; border-radius: 9999px; background: var(--chili); color: var(--primary-foreground); font-size: 0.95rem; font-weight: 800; line-height: 1; flex-shrink: 0; } .ds-card-desc { margin: -0.5rem 0 0; font-size: 0.875rem; color: var(--muted-foreground); } .ds-input { width: 100%; height: 2.5rem; padding: 0.5rem 0.75rem; border: 1px solid color-mix(in oklch, var(--input) 70%, transparent); border-radius: 10px; background: var(--card); color: var(--foreground); font: inherit; font-size: 0.875rem; outline: none; transition: border-color 150ms, box-shadow 150ms; } .ds-input:hover { border-color: var(--input); } .ds-input:focus-visible { border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 25%, transparent); }"
+    },
+    {
+      "name": "Ô số trên quầy (StatTile)",
+      "kind": "custom",
+      "refersTo": "stat-tile",
+      "description": "Ô số admin: hộp giấy với con số Baloo 2 ớt đậm; ô cảnh báo (có việc cần xử lý) đổi cả ô sang mảng xoài. Ô có liên kết nhấc khi hover.",
+      "html": "<ul class=\"ds-ledger\"><li><a class=\"ds-tile ds-tile-warning\" href=\"#\"><span class=\"ds-tile-label\">Đơn chờ xác nhận</span><span class=\"ds-tile-value\">12</span></a></li><li><a class=\"ds-tile\" href=\"#\"><span class=\"ds-tile-label\">Phân loại sắp hết hàng</span><span class=\"ds-tile-value\">0</span><span class=\"ds-tile-hint\">Dưới ngưỡng cảnh báo</span></a></li></ul>",
+      "css": ".ds-ledger { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; font-family: var(--font-be-vietnam), 'Be Vietnam Pro', system-ui, sans-serif; } .ds-tile { display: grid; align-content: start; gap: 0.5rem; height: 100%; padding: 1rem; border: 1px solid var(--border); border-radius: 16px; background: var(--card); color: var(--foreground); text-decoration: none; transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 240ms cubic-bezier(0.16, 1, 0.3, 1); } .ds-tile:hover, .ds-tile:focus-visible { transform: translateY(-3px) rotate(-0.6deg); box-shadow: 0 18px 30px -14px oklch(0.3 0.06 40 / 0.45); } .ds-tile:focus-visible { outline: none; } .ds-tile-warning { border-color: transparent; background: var(--mango); } .ds-tile-label { font-size: 0.875rem; font-weight: 600; } .ds-tile-value { font-family: var(--font-baloo), 'Baloo 2', system-ui, sans-serif; font-size: 1.875rem; font-weight: 800; line-height: 1; color: var(--chili-deep); font-variant-numeric: tabular-nums; } .ds-tile-warning .ds-tile-value { color: var(--foreground); } .ds-tile-hint { font-size: 0.75rem; color: var(--muted-foreground); }"
+    },
+    {
+      "name": "Sidebar quầy (nav admin)",
+      "kind": "nav",
+      "refersTo": "nav-item-active",
+      "description": "Sidebar admin là hộp giấy: mục là viên tròn, đang chọn tô ớt chữ trắng, các mục khác chỉ hiện nền kem đậm khi hover.",
+      "html": "<nav class=\"ds-side\"><p class=\"ds-side-brand\"><span>SnackShop</span><span class=\"ds-side-tag\">Quầy</span></p><a class=\"ds-side-item\" href=\"#\" aria-current=\"page\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect width=\"7\" height=\"9\" x=\"3\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"5\" x=\"14\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"9\" x=\"14\" y=\"12\" rx=\"1\"/><rect width=\"7\" height=\"5\" x=\"3\" y=\"16\" rx=\"1\"/></svg>Tổng quan</a><a class=\"ds-side-item\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M16 10a4 4 0 0 1-8 0\"/><path d=\"M3.103 6.034h17.794\"/><path d=\"M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z\"/></svg>Đơn hàng</a><a class=\"ds-side-item\" href=\"#\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z\"/><path d=\"M12 22V12\"/><path d=\"m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7\"/></svg>Kho</a></nav>",
+      "css": ".ds-side { display: grid; gap: 0.25rem; width: 15rem; padding: 0.75rem; border-right: 1px solid var(--border); background: var(--card); font-family: var(--font-be-vietnam), 'Be Vietnam Pro', system-ui, sans-serif; } .ds-side-brand { display: flex; align-items: center; gap: 0.5rem; margin: 0 0 0.75rem; padding: 0 0.5rem; font-family: var(--font-baloo), 'Baloo 2', system-ui, sans-serif; font-size: 1.5rem; font-weight: 800; line-height: 1; color: var(--chili); } .ds-side-tag { padding: 0.125rem 0.375rem; border-radius: 8px; background: var(--cream-2); color: var(--muted-foreground); font-family: var(--font-be-vietnam), 'Be Vietnam Pro', system-ui, sans-serif; font-size: 10px; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; } .ds-side-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem 1rem; border-radius: 9999px; color: color-mix(in oklch, var(--foreground) 85%, transparent); font-size: 0.875rem; font-weight: 600; text-decoration: none; transition: color 150ms, background-color 150ms; } .ds-side-item:hover { background: var(--cream-2); color: var(--chili-deep); } .ds-side-item:focus-visible { outline: none; box-shadow: 0 0 0 3px color-mix(in oklch, var(--ring) 40%, transparent); } .ds-side-item[aria-current='page'] { background: var(--chili); color: var(--primary-foreground); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Bao bì snack Việt",
+    "overview": "Toàn bộ giao diện là mặt trước một gói snack in offset phóng to thành trang web. Nền kem là kệ hàng; mỗi danh mục và mỗi sản phẩm là một gói snack in bằng một trong bốn màu bao bì (ớt, xoài, lá dứa, cô-ban), dùng cả mảng chứ không chấm phá. Mép trên của mỗi gói là dải sọc chéo 45° đỏ-vàng được \"ép nhiệt\" răng cưa; dải sọc ấy cũng là băng thương hiệu chạy hết chiều ngang header. Giá là con tem tròn trắng viền màu dán ở góc gói; khuyến mãi duy nhất trên kệ là một ngôi sao vàng; tên tiệm và tiêu đề in bằng Baloo 2 nét dày với bóng lệch cứng như in chồng hai lượt mực.\n\nHệ thống từ chối hai khuôn mẫu: trang marketplace trắng (banner trên một hàng thẻ đều nhau với nút cam) và thế giới vở học sinh trước đó (giấy kẻ ô, lề đỏ, con dấu nghiêng, danh sách đánh số, chữ viết tay). Tông màu sáng, chỉ sáng: kệ hàng dưới đèn huỳnh quang không có chế độ tối. Ảnh sản phẩm luôn là hình đĩa tròn viền trắng mờ dán lên mặt gói; chữ trên màu luôn trắng (hoặc mực đậm trên vàng xoài).\n\nAdmin là quầy sau kệ: nền kem, dải sọc mỏng chỉ ở mép trên cùng, sidebar là hộp giấy trắng; màu chỉ dành cho mục đang chọn, chip trạng thái, ô số cần xử lý (vàng xoài) và hành động chính. Chuyển động được viết đúng hai lần: gói hàng nhấc khỏi kệ khi hover (dịch lên 3px, xoay -0,6°, bóng mềm), và viên giỏ hàng nảy một lần khi có món mới; mọi thứ khác chỉ đổi màu trong 150ms.",
+    "keyCharacteristics": [
+      "Kệ kem (`cream`) làm nền; hộp giấy trắng viền mảnh cho nội dung \"in sẵn\"; gói màu bo 28px cho danh mục, sản phẩm và mặt gói chi tiết.",
+      "Bốn màu bao bì, mỗi màu một việc: ớt là thương hiệu/hành động chính, xoài là CTA trên màu và cảnh báo, lá dứa là thành công/còn hàng, cô-ban là thông tin. Đồ uống (danh mục thứ 5) là gói trắng viền ớt 3px.",
+      "Dải sọc chéo 45° ớt-xoài là băng thương hiệu (header 72px, footer, dải admin 10px) và mép ép nhiệt răng cưa 16–20px trên mỗi gói.",
+      "Baloo 2 800 cho mọi tiêu đề, giá, con số; bóng lệch cứng (`overprint`) chỉ cho tên tiệm và tiêu đề trên mặt gói. Be Vietnam Pro cho thân bài và điều khiển.",
+      "Điều khiển là viên thuốc (`rounded-full`): nút, pill danh mục, mục nav, phân loại, tem trạng thái. Trên nền màu, viên là trắng; đang chọn thì tô đặc màu.",
+      "Giá là con tem tròn trắng viền 3px màu của gói; ưu đãi là ngôi sao 24 cánh vàng xoài.",
+      "Bóng chỉ khi gói được nhấc (hover) hoặc nổi khỏi trang (dialog, drawer); mọi thứ khác phẳng."
+    ],
+    "rules": [
+      { "name": "The Whole-Field Rule", "body": "Màu bao bì là mảng, không phải điểm nhấn. Một gói nhận đúng một màu phủ toàn bộ mặt; màu chọn theo vị trí danh mục (`toneAt`) hoặc hash ổn định của sản phẩm (`toneFor`) để cùng một gói luôn cùng màu. Không dùng màu bao bì làm viền, gạch chân hay icon lẻ trên nền kem.", "section": "colors" },
+      { "name": "The Chili-on-Cream, Mango-on-Colour Rule", "body": "Trên nền kem hoặc giấy trắng, hành động chính là ớt chữ trắng. Trên một gói màu, hành động chính là xoài chữ mực (trên gói xoài thì ngược lại: ớt chữ trắng). Không bao giờ đặt nút ớt lên gói ớt.", "section": "colors" },
+      { "name": "The Light Shelf Rule", "body": "Hệ thống chỉ có một chế độ sáng. Không thêm biến thể tối cho token; không dùng `dark:`.", "section": "colors" },
+      { "name": "The Printed-Face Rule", "body": "Baloo 2 chỉ ở những chỗ được in lớn trên mặt gói: tiêu đề `h1`–`h2`, tên danh mục/tiệm, giá, con số, chữ trong ngôi sao và con dấu, số bước. Không bao giờ ở thân bài, nút, ô nhập, ô bảng, nhãn form. Tên sản phẩm trong gói trên kệ là `h3` Be Vietnam Pro 700 16–18px vì nó là nhãn thành phần, không phải tên nhãn hiệu.", "section": "typography" },
+      { "name": "The Overprint Rule", "body": "Bóng chữ lệch cứng (`overprint` 3px, `overprint-sm` 2px, màu `chili-shadow`) chỉ xuất hiện trên tên tiệm và tiêu đề đặt trên gói màu (hero, mặt gói sản phẩm, nhãn kệ danh mục, footer). Tiêu đề trên nền kem hoặc giấy trắng không có bóng.", "section": "typography" },
+      { "name": "The Tabular Rule", "body": "Mọi số tiền và số đếm dùng `tabular-nums` (đã bật ở `body`); định dạng VND không thập phân, ký hiệu \"₫\" sau số; ngôi sao viết tắt \"300K\"/\"1,2TR\".", "section": "typography" },
+      { "name": "The Sealed-Top Rule", "body": "Mọi gói màu (danh mục, sản phẩm, mặt gói chi tiết, nhãn kệ) có một dải `stripes-sm crimp` cao 16px (20px trên mặt gói lớn) dán sát mép trên, răng cưa 12px; nội dung bắt đầu dưới dải đó. Hộp giấy trắng không có dải.", "section": "layout" },
+      { "name": "The Disc Rule", "body": "Ảnh sản phẩm luôn là đĩa tròn (`rounded-full`, `object-cover`) nền giấy với viền trắng mờ 4px (`ring-4 ring-white/60`) trên kệ và 8px trên mặt gói/hero; không bao giờ là hình vuông hay chữ nhật bo góc trừ ảnh nhỏ trong giỏ, dòng đơn và mã QR.", "section": "layout" },
+      { "name": "The Lift-Only Shadow Rule", "body": "Bóng là bằng chứng một gói đã rời kệ. Thẻ, nút, ô nhập, header, sticker, tem không có bóng khi nghỉ; chỉ `lift` (hover) và lớp nổi (dialog, drawer) được có bóng.", "section": "elevation" },
+      { "name": "The Pill Rule", "body": "Mọi điều khiển có trạng thái chọn (pill danh mục, mục nav, trang trong phân trang, phân loại, nút) là viên tròn hoàn toàn. Đang chọn thì tô đặc màu (ớt trên kem; màu của gói cho pill danh mục; trắng với chữ màu gói trên mặt gói); không chọn thì viền mảnh trên nền giấy hoặc viền trắng mờ trên gói. Không dùng gạch chân hay đổi màu chữ đơn thuần để chỉ trạng thái chọn.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do in mỗi gói (danh mục, sản phẩm, mặt gói chi tiết) bằng đúng một màu bao bì phủ toàn mặt, chọn qua `toneAt`/`toneFor`, với dải `stripes-sm crimp` dán mép trên và `lift` khi hover.",
+      "Do đặt hành động chính là ớt chữ trắng trên kem/giấy và xoài chữ mực trên gói màu (ớt trên gói xoài); mọi điều khiển khác trên gói là viên trắng hoặc viền trắng mờ.",
+      "Do in giá bằng tem tròn trắng viền 3px màu gói (`PriceStamp`) trên gói, và Baloo 2 800 ớt đậm (`PriceTag`) trên giấy; giảm giá ghi \"-x%\" ớt đậm hoặc tag ớt chữ trắng.",
+      "Do hiển thị trạng thái đơn và thanh toán bằng `Badge shape=\"stamp\"` (viên màu đặc, IN HOA) với ánh xạ trong `lib/labels.ts`; nhãn số liệu (tồn kho) bằng sticker nhuộm.",
+      "Do dùng Baloo 2 800 cho mọi tiêu đề, giá và con số, và thêm `overprint`/`overprint-sm` chỉ khi tiêu đề nằm trên gói màu.",
+      "Do cắt ảnh sản phẩm thành đĩa tròn viền trắng mờ trên gói; để ảnh nhỏ bo 6–8px trong giỏ và dòng đơn.",
+      "Do giữ ring focus 3px `ring` 40% (trắng 50% trên gói màu), `aria-current=\"page\"` trên mục đang chọn, icon lucide 16px `aria-hidden` kèm chữ.",
+      "Do tôn trọng `prefers-reduced-motion`: `lift` và `bump` đã tắt; mọi motion mới cũng phải tắt theo."
+    ],
+    "donts": [
+      "Don't thêm bóng cho thẻ, nút, ô nhập, header, sticker hay tem khi nghỉ; chỉ `lift` và lớp nổi (dialog, drawer) có bóng.",
+      "Don't dùng Baloo 2 cho thân bài, nút, ô nhập, ô bảng hay nhãn form; không dùng Be Vietnam Pro cho `h1`–`h2`; không đưa mặt chữ viết tay nào trở lại.",
+      "Don't đặt nút ớt lên gói ớt, hay dùng màu bao bì làm viền, gạch chân, icon lẻ trên nền kem; màu là mảng, không phải điểm nhấn.",
+      "Don't thêm ngôi sao thứ hai trên cùng một kệ; `burst` lớn chỉ dành cho ưu đãi freeship/COD ở hero, `Seal` nhỏ chỉ cho \"Bán chạy\"/\"Hết hàng\".",
+      "Don't dùng gradient nào ngoài dải sọc 45° và vệt ánh bạc của `bag`; không nền tối cho section.",
+      "Don't thêm chế độ tối hay biến thể `dark:` cho token; hệ thống là kệ sáng.",
+      "Don't quay lại thế giới vở: không nền kẻ ô, lề đỏ, con dấu nghiêng, leader chấm chấm hay danh sách đánh số thay cho lưới gói.",
+      "Don't dùng emoji trong giao diện; dùng icon lucide hoặc chữ.",
+      "Don't vẽ UI cho mã giảm giá, đánh giá sản phẩm hay cổng VNPay/MoMo như thể đã có (chưa có trong sản phẩm)."
+    ]
+  }
+}

@@ -11,7 +11,16 @@ import { EmptyState, ErrorState, Spinner } from '@/components/ui/feedback'
 import { Input, NativeSelect } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Pagination, totalPagesOf } from '@/components/ui/pagination'
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeadNumber,
+  TableHeader,
+  TableRow,
+  TableRowNumber,
+} from '@/components/ui/table'
 import { useAdminOrdersQuery } from '@/features/admin/orders/queries'
 import type { OrderStatus, PaymentMethod, PaymentStatus } from '@/lib/api/types'
 import { getErrorMessage } from '@/lib/errors'
@@ -182,6 +191,7 @@ function OrdersList() {
           <Table>
             <TableHeader>
               <TableRow>
+                <TableHeadNumber />
                 <TableHead>Mã đơn</TableHead>
                 <TableHead>Khách hàng</TableHead>
                 <TableHead>Trạng thái</TableHead>
@@ -191,8 +201,9 @@ function OrdersList() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {query.data.items.map((o) => (
+              {query.data.items.map((o, index) => (
                 <TableRow key={o.id}>
+                  <TableRowNumber index={index} page={page} pageSize={PAGE_SIZE} />
                   <TableCell>
                     <Link
                       href={`/admin/don-hang/${o.id}`}

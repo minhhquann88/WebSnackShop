@@ -7,10 +7,19 @@ import {
   paymentStatusVariants,
 } from '@/lib/labels'
 
+/** Order and payment states are stamped: once set they read as done, not as a toggle. */
 export function OrderStatusBadge({ status }: { status: OrderStatus }) {
-  return <Badge variant={orderStatusVariants[status]}>{orderStatusLabels[status]}</Badge>
+  return (
+    <Badge key={status} shape="stamp" variant={orderStatusVariants[status]}>
+      {orderStatusLabels[status]}
+    </Badge>
+  )
 }
 
 export function PaymentStatusBadge({ status }: { status: PaymentStatus }) {
-  return <Badge variant={paymentStatusVariants[status]}>{paymentStatusLabels[status]}</Badge>
+  return (
+    <Badge key={status} shape="stamp" variant={paymentStatusVariants[status]}>
+      {paymentStatusLabels[status]}
+    </Badge>
+  )
 }

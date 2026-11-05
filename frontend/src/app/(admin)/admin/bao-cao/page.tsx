@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { AdminOnly } from '@/components/admin/admin-only'
 import { SimpleBarChart, compactVnd } from '@/components/admin/charts'
 import { PageHeader } from '@/components/admin/page-header'
-import { StatTile } from '@/components/admin/stat-tile'
+import { StatLedger, StatTile } from '@/components/admin/stat-tile'
 import { Button } from '@/components/ui/button'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { EmptyState, ErrorState, Spinner } from '@/components/ui/feedback'
@@ -99,7 +99,7 @@ function Reports() {
             <ErrorState message={getErrorMessage(revenue.error)} onRetry={() => void revenue.refetch()} />
           ) : (
             <>
-              <div className="grid gap-4 sm:grid-cols-3">
+              <StatLedger>
                 <StatTile label="Tổng doanh thu" value={formatVnd(revenue.data.totalRevenue)} />
                 <StatTile label="Số đơn" value={formatNumber(revenue.data.orderCount)} />
                 <StatTile
@@ -110,7 +110,7 @@ function Reports() {
                       : '—'
                   }
                 />
-              </div>
+              </StatLedger>
               <Card>
                 <CardHeader>
                   <CardTitle>Doanh thu theo ngày</CardTitle>

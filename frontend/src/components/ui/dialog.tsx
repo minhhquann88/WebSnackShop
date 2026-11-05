@@ -9,6 +9,7 @@ export const Dialog = DialogPrimitive.Root
 export const DialogTrigger = DialogPrimitive.Trigger
 export const DialogClose = DialogPrimitive.Close
 
+/** A carton lifted off the shelf: the one surface that floats, so the one with a soft shadow. */
 export function DialogContent({
   className,
   children,
@@ -16,17 +17,17 @@ export function DialogContent({
 }: React.ComponentProps<typeof DialogPrimitive.Content>) {
   return (
     <DialogPrimitive.Portal>
-      <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/50 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
+      <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-chili-shadow/40 backdrop-blur-[2px] data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0" />
       <DialogPrimitive.Content
         className={cn(
-          'fixed top-1/2 left-1/2 z-50 grid max-h-[90vh] w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 overflow-y-auto rounded-xl border bg-background p-6 shadow-lg data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:animate-in data-[state=open]:fade-in-0',
+          'fixed top-1/2 left-1/2 z-50 grid max-h-[90vh] w-[calc(100%-2rem)] max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 overflow-y-auto rounded-2xl bg-card p-6 shadow-float data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-98 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-98',
           className,
         )}
         {...props}
       >
         {children}
         <DialogPrimitive.Close
-          className="absolute top-4 right-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+          className="absolute top-4 right-4 rounded-full p-1.5 text-muted-foreground transition-colors hover:bg-cream-2 hover:text-chili-deep focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
           aria-label="Đóng"
         >
           <X className="size-4" aria-hidden />
@@ -47,7 +48,12 @@ export function DialogFooter({ className, ...props }: React.ComponentProps<'div'
 }
 
 export function DialogTitle({ className, ...props }: React.ComponentProps<typeof DialogPrimitive.Title>) {
-  return <DialogPrimitive.Title className={cn('text-lg font-semibold', className)} {...props} />
+  return (
+    <DialogPrimitive.Title
+      className={cn('font-display text-xl leading-tight font-extrabold', className)}
+      {...props}
+    />
+  )
 }
 
 export function DialogDescription({

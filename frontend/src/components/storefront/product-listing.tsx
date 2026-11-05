@@ -3,6 +3,7 @@ import { EmptyState, ErrorState } from '@/components/ui/feedback'
 import { LinkPagination, totalPagesOf } from '@/components/ui/pagination'
 import { PRODUCT_SORTS, getProducts } from '@/features/catalog/server'
 import { formatNumber } from '@/lib/format'
+import type { Tone } from '@/lib/tone'
 import { ProductGrid } from './product-card'
 import { SortSelect } from './sort-select'
 
@@ -14,10 +15,18 @@ type ProductListingProps = {
   search?: string
   sort?: string
   page: number
+  tone?: Tone
 }
 
 /** Server-rendered, paginated product grid shared by category and search pages. */
-export async function ProductListing({ basePath, categorySlug, search, sort, page }: ProductListingProps) {
+export async function ProductListing({
+  basePath,
+  categorySlug,
+  search,
+  sort,
+  page,
+  tone,
+}: ProductListingProps) {
   const effectiveSort = sort ?? '-createdAt'
   const data = await getProducts({ categorySlug, search, sort: effectiveSort, page, pageSize: PAGE_SIZE })
 
@@ -51,7 +60,7 @@ export async function ProductListing({ basePath, categorySlug, search, sort, pag
           }
         />
       ) : (
-        <ProductGrid products={data.items} />
+        <ProductGrid products={data.items} tone={tone} />
       )}
       <LinkPagination page={data.page} totalPages={totalPages} hrefForPage={hrefForPage} />
     </div>

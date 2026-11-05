@@ -3,44 +3,97 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * SnackShop visual system: the front of a Vietnamese offset-printed snack bag.
+ * Cream shelf, four packaging colours used as whole fields, a diagonal stripe band,
+ * one starburst for the offer, round price stamps. Light only: a shop shelf under
+ * fluorescent light has no dark mode.
+ */
 :root {
-  --radius: 0.625rem;
-  --background: oklch(0.99 0.004 85);
-  --foreground: oklch(0.22 0.02 50);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.02 50);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.02 50);
-  --primary: oklch(0.55 0.19 35);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.95 0.02 75);
-  --secondary-foreground: oklch(0.3 0.04 50);
-  --muted: oklch(0.96 0.01 80);
-  --muted-foreground: oklch(0.48 0.02 50);
-  --accent: oklch(0.94 0.04 80);
-  --accent-foreground: oklch(0.3 0.04 50);
-  --destructive: oklch(0.55 0.22 27);
-  --destructive-foreground: oklch(0.99 0 0);
-  --success: oklch(0.52 0.13 150);
-  --warning: oklch(0.7 0.15 75);
-  --border: oklch(0.9 0.015 75);
-  --input: oklch(0.88 0.015 75);
-  --ring: oklch(0.55 0.19 35);
-  --chart-1: oklch(0.55 0.19 35);
-  --chart-2: oklch(0.6 0.12 180);
-  --chart-3: oklch(0.5 0.1 260);
+  --radius: 0.75rem;
+
+  /* Packaging inks (one job each) */
+  --chili: oklch(0.67 0.21 32);
+  --chili-deep: oklch(0.5 0.19 29);
+  --chili-shadow: oklch(0.4 0.15 30);
+  --chili-tint: oklch(0.95 0.04 35);
+  --mango: oklch(0.86 0.17 88);
+  --mango-deep: oklch(0.78 0.17 85);
+  --mango-text: oklch(0.42 0.09 80);
+  --mango-tint: oklch(0.96 0.07 92);
+  --pandan: oklch(0.62 0.15 152);
+  --pandan-deep: oklch(0.5 0.14 152);
+  --pandan-tint: oklch(0.95 0.05 152);
+  --cobalt: oklch(0.5 0.21 264);
+  --cobalt-deep: oklch(0.42 0.19 264);
+  --cobalt-tint: oklch(0.94 0.04 264);
+
+  /* Shelf and paper */
+  --cream: oklch(0.98 0.02 85);
+  --cream-2: oklch(0.95 0.03 85);
+  --paper: oklch(1 0 0);
+  --ink: oklch(0.22 0.012 60);
+  --ink-soft: oklch(0.48 0.03 60);
+  --rule: oklch(0.9 0.035 80);
+
+  /* Semantic */
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--chili);
+  --primary-foreground: oklch(0.995 0 0);
+  --secondary: var(--mango);
+  --secondary-foreground: var(--ink);
+  --muted: var(--cream-2);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--chili-tint);
+  --accent-foreground: var(--chili-deep);
+  --destructive: var(--chili-deep);
+  --destructive-foreground: oklch(0.995 0 0);
+  --success: var(--pandan);
+  --success-foreground: var(--pandan-deep);
+  --warning: var(--mango);
+  --warning-foreground: var(--mango-text);
+  --info: var(--cobalt);
+  --border: var(--rule);
+  --input: oklch(0.8 0.04 75);
+  --ring: var(--chili);
+  --chart-1: var(--chili);
+  --chart-2: var(--mango);
+  --chart-3: var(--pandan);
+  --chart-4: var(--cobalt);
 }
 
 @theme inline {
   --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-baloo), var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-cream-2: var(--cream-2);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-chili: var(--chili);
+  --color-chili-deep: var(--chili-deep);
+  --color-chili-shadow: var(--chili-shadow);
+  --color-chili-tint: var(--chili-tint);
+  --color-mango: var(--mango);
+  --color-mango-deep: var(--mango-deep);
+  --color-mango-text: var(--mango-text);
+  --color-mango-tint: var(--mango-tint);
+  --color-pandan: var(--pandan);
+  --color-pandan-deep: var(--pandan-deep);
+  --color-pandan-tint: var(--pandan-tint);
+  --color-cobalt: var(--cobalt);
+  --color-cobalt-deep: var(--cobalt-deep);
+  --color-cobalt-tint: var(--cobalt-tint);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -50,24 +103,233 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
   --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --color-chart-4: var(--chart-4);
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: calc(var(--radius) - 2px);
+  --radius-xl: var(--radius);
+  --radius-2xl: calc(var(--radius) + 4px);
+  --radius-3xl: calc(var(--radius) + 16px);
+  --ease-pop: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-bag: 0 18px 30px -14px oklch(0.3 0.06 40 / 0.45);
+  --shadow-float: 0 24px 48px -16px oklch(0.3 0.06 40 / 0.4);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scrollbar-color: var(--chili) var(--cream-2);
+    scrollbar-width: thin;
+  }
   body {
     @apply bg-background text-foreground antialiased;
+    caret-color: var(--chili);
+    font-variant-numeric: tabular-nums;
   }
+  ::selection {
+    background: var(--mango);
+    color: var(--ink);
+  }
+  a {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1.5px;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--chili);
+    border: 3px solid var(--cream-2);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--cream-2);
+  }
+  input[type='date']::-webkit-calendar-picker-indicator {
+    opacity: 0.6;
+  }
+}
+
+/* The brand band: 45° red-and-yellow stripes, printed edge to edge. */
+@utility stripes {
+  background-color: var(--chili);
+  background-image: repeating-linear-gradient(45deg, var(--chili) 0 28px, var(--mango) 28px 56px);
+}
+
+/* Thin stripe strip: the sealed top edge of a bag. */
+@utility stripes-sm {
+  background-color: var(--chili);
+  background-image: repeating-linear-gradient(45deg, var(--chili) 0 10px, var(--mango) 10px 20px);
+}
+
+/* Overprint: display type with a hard offset shadow, like a second ink pass. */
+@utility overprint {
+  text-shadow: 3px 3px 0 var(--chili-shadow);
+}
+@utility overprint-sm {
+  text-shadow: 2px 2px 0 var(--chili-shadow);
+}
+
+/* Foil sheen on a bag face: one diagonal highlight, nothing else. */
+@utility bag {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: var(--radius-3xl);
+}
+.bag::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0) 45%);
+  pointer-events: none;
+}
+
+/* Lift: a bag picked off the shelf (the hover of every product bag). */
+@utility lift {
+  transition:
+    transform 240ms var(--ease-out),
+    box-shadow 240ms var(--ease-out);
+}
+.lift:hover,
+.lift:focus-visible,
+.lift:focus-within {
+  transform: translateY(-3px) rotate(-0.6deg);
+  box-shadow: var(--shadow-bag);
+}
+
+/* Starburst: the one offer on the shelf. */
+@utility burst {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  clip-path: polygon(
+    50% 0%,
+    59.8% 13.3%,
+    75% 6.7%,
+    76.9% 23.1%,
+    93.3% 25%,
+    86.7% 40.2%,
+    100% 50%,
+    86.7% 59.8%,
+    93.3% 75%,
+    76.9% 76.9%,
+    75% 93.3%,
+    59.8% 86.7%,
+    50% 100%,
+    40.2% 86.7%,
+    25% 93.3%,
+    23.1% 76.9%,
+    6.7% 75%,
+    13.3% 59.8%,
+    0% 50%,
+    13.3% 40.2%,
+    6.7% 25%,
+    23.1% 23.1%,
+    25% 6.7%,
+    40.2% 13.3%
+  );
+}
+
+/* Round price stamp: white disc, coloured rim, the price inside. */
+@utility stamp {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--paper);
+  border: 3px solid currentColor;
+  aspect-ratio: 1;
+  line-height: 1.05;
+  text-align: center;
+  font-weight: 800;
+  padding: 0.25rem;
+}
+
+/* Count bump: the cart pill when something lands in it. */
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.22);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@utility bump {
+  animation: bump 360ms var(--ease-pop);
+}
+
+/* Checkout steps and timelines: a numbered disc in the packaging colour. */
+@utility step-disc {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  background: var(--chili);
+  color: var(--primary-foreground);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lift,
+  .lift:hover,
+  .lift:focus-visible,
+  .lift:focus-within {
+    transition: none;
+    transform: none;
+  }
+  .bump {
+    animation: none;
+  }
+}
+
+/* Crimped seal: the stripe strip's lower edge is pinked like a heat-sealed bag top. */
+@utility crimp {
+  mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 12px 100%;
+  -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 12px 100%;
+}
+
+/* Small seal: a flag printed on the bag (bán chạy, hết hàng), set in the burst shape. */
+@utility seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.4rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }

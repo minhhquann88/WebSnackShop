@@ -53,7 +53,7 @@ function Forbidden() {
   return (
     <main className="mx-auto flex min-h-dvh max-w-md flex-col items-center justify-center gap-4 px-4 text-center">
       <ShieldAlert className="size-10 text-destructive" aria-hidden />
-      <h1 className="text-xl font-semibold">Không có quyền truy cập</h1>
+      <h1 className="font-display text-2xl font-extrabold">Không có quyền truy cập</h1>
       <p className="text-muted-foreground">Khu vực quản trị chỉ dành cho nhân viên cửa hàng.</p>
       <Link href="/" className={buttonVariants()}>
         Về trang chủ
@@ -62,6 +62,21 @@ function Forbidden() {
   )
 }
 
+function Brand() {
+  return (
+    <span className="flex items-center gap-2 font-display text-2xl leading-none font-extrabold">
+      <span className="text-chili">SnackShop</span>
+      <span className="rounded-md bg-cream-2 px-1.5 py-0.5 font-sans text-[10px] font-extrabold tracking-wider text-muted-foreground uppercase">
+        Quầy
+      </span>
+    </span>
+  )
+}
+
+/**
+ * The admin is the counter behind the shelf: the stripe band runs along the very top, the
+ * sidebar is a white carton, colour is kept for the active item, status chips and the primary action.
+ */
 function Shell({ children }: { children: ReactNode }) {
   const user = useAuthStore((s) => s.user)
   const pathname = usePathname()
@@ -93,8 +108,10 @@ function Shell({ children }: { children: ReactNode }) {
             onClick={() => setOpen(false)}
             aria-current={active ? 'page' : undefined}
             className={cn(
-              'flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors',
-              active ? 'bg-primary text-primary-foreground' : 'text-foreground/80 hover:bg-accent',
+              'flex items-center gap-3 rounded-full px-4 py-2 text-sm font-semibold transition-colors',
+              active
+                ? 'bg-chili text-primary-foreground'
+                : 'text-foreground/85 hover:bg-cream-2 hover:text-chili-deep',
             )}
           >
             <item.icon className="size-4" aria-hidden />
@@ -106,75 +123,81 @@ function Shell({ children }: { children: ReactNode }) {
   )
 
   return (
-    <div className="flex min-h-dvh bg-muted/30">
-      <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col border-r bg-background lg:flex">
-        <Link href="/admin" className="flex h-14 items-center border-b px-5 text-lg font-bold text-primary">
-          SnackShop Admin
-        </Link>
-        {nav}
-        <div className="mt-auto border-t p-3">
-          <Link
-            href="/"
-            className={cn(buttonVariants({ variant: 'ghost', size: 'sm' }), 'w-full justify-start')}
-          >
-            Xem cửa hàng
+    <div className="flex min-h-dvh flex-col">
+      <div className="h-2.5 shrink-0 stripes-sm" aria-hidden />
+      <div className="flex flex-1">
+        <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col border-r bg-card lg:flex">
+          <Link href="/admin" className="flex h-14 items-center border-b px-5">
+            <Brand />
           </Link>
-        </div>
-      </aside>
+          {nav}
+          <div className="mt-auto border-t p-3">
+            <Link
+              href="/"
+              className={cn(buttonVariants({ variant: 'ghost', size: 'sm' }), 'w-full justify-start')}
+            >
+              Xem cửa hàng
+            </Link>
+          </div>
+        </aside>
 
-      {open ? (
-        <div
-          className="fixed inset-0 z-40 lg:hidden"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Menu quản trị"
-        >
-          <button
-            type="button"
-            className="absolute inset-0 bg-black/40"
-            aria-label="Đóng menu"
-            onClick={() => setOpen(false)}
-          />
-          <aside className="absolute inset-y-0 left-0 flex w-64 flex-col bg-background shadow-lg">
-            <div className="flex h-14 items-center justify-between border-b px-4">
-              <span className="text-lg font-bold text-primary">SnackShop Admin</span>
-              <Button variant="ghost" size="icon-sm" aria-label="Đóng menu" onClick={() => setOpen(false)}>
-                <X aria-hidden />
+        {open ? (
+          <div
+            className="fixed inset-0 z-50 lg:hidden"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu quản trị"
+          >
+            <button
+              type="button"
+              className="absolute inset-0 bg-chili-shadow/40 backdrop-blur-[2px]"
+              aria-label="Đóng menu"
+              onClick={() => setOpen(false)}
+            />
+            <aside className="absolute inset-y-0 left-0 flex w-64 flex-col bg-card shadow-float">
+              <div className="flex h-14 items-center justify-between border-b px-4">
+                <Brand />
+                <Button variant="ghost" size="icon-sm" aria-label="Đóng menu" onClick={() => setOpen(false)}>
+                  <X aria-hidden />
+                </Button>
+              </div>
+              {nav}
+            </aside>
+          </div>
+        ) : null}
+
+        <div className="flex min-w-0 flex-1 flex-col">
+          <header className="sticky top-0 z-30 flex h-14 items-center gap-3 border-b bg-cream/95 px-4 backdrop-blur supports-[backdrop-filter]:bg-cream/85 sm:px-6">
+            <Button
+              variant="ghost"
+              size="icon-sm"
+              className="lg:hidden"
+              aria-label="Mở menu"
+              onClick={() => setOpen(true)}
+            >
+              <Menu aria-hidden />
+            </Button>
+            <span className="lg:hidden">
+              <Brand />
+            </span>
+            <div className="ml-auto flex items-center gap-3">
+              <div className="hidden text-right sm:block">
+                <p className="text-sm leading-tight font-bold">{user?.fullName}</p>
+                <p className="text-xs text-muted-foreground">
+                  {user?.roles
+                    .filter((r) => r !== 'Customer')
+                    .map((r) => roleLabels[r] ?? r)
+                    .join(', ')}
+                </p>
+              </div>
+              <Button variant="outline" size="sm" onClick={onLogout} loading={loggingOut}>
+                <LogOut aria-hidden />
+                Đăng xuất
               </Button>
             </div>
-            {nav}
-          </aside>
+          </header>
+          <main className="flex-1 p-4 sm:p-6">{children}</main>
         </div>
-      ) : null}
-
-      <div className="flex min-w-0 flex-1 flex-col">
-        <header className="sticky top-0 z-30 flex h-14 items-center gap-3 border-b bg-background px-4">
-          <Button
-            variant="ghost"
-            size="icon-sm"
-            className="lg:hidden"
-            aria-label="Mở menu"
-            onClick={() => setOpen(true)}
-          >
-            <Menu aria-hidden />
-          </Button>
-          <div className="ml-auto flex items-center gap-3">
-            <div className="hidden text-right sm:block">
-              <p className="text-sm leading-tight font-medium">{user?.fullName}</p>
-              <p className="text-xs text-muted-foreground">
-                {user?.roles
-                  .filter((r) => r !== 'Customer')
-                  .map((r) => roleLabels[r] ?? r)
-                  .join(', ')}
-              </p>
-            </div>
-            <Button variant="outline" size="sm" onClick={onLogout} loading={loggingOut}>
-              <LogOut aria-hidden />
-              Đăng xuất
-            </Button>
-          </div>
-        </header>
-        <main className="flex-1 p-4 sm:p-6">{children}</main>
       </div>
     </div>
   )

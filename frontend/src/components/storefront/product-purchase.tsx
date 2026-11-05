@@ -5,26 +5,32 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { ShoppingBag } from 'lucide-react'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { useCart } from '@/features/cart/use-cart'
 import type { ProductDetail } from '@/lib/api/types'
 import { getErrorMessage } from '@/lib/errors'
 import { formatNumber } from '@/lib/format'
+import { toneClasses, type Tone } from '@/lib/tone'
 import { cn } from '@/lib/utils'
 import { MAX_LINE_QUANTITY } from '@/stores/cart.store'
-import { PriceTag } from './price-tag'
+import { PriceStamp } from './price-tag'
 import { QuantityInput } from './quantity-input'
 
-/** Variant picker + quantity + add to cart. Stock shown is the API's `availableQuantity`. */
-export function ProductPurchase({ product }: { product: ProductDetail }) {
+/**
+ * Variant picker + quantity + add to cart, printed on the product's bag face: the price is a
+ * round stamp, variants are white pills (filled when chosen), the buy button is mango.
+ * Stock shown is the API's `availableQuantity`.
+ */
+export function ProductPurchase({ product, tone }: { product: ProductDetail; tone: Tone }) {
   const router = useRouter()
   const cart = useCart()
+  const c = toneClasses[tone]
   const firstAvailable = product.variants.find((v) => v.availableQuantity > 0) ?? product.variants[0]
   const [variantId, setVariantId] = useState(firstAvailable?.id ?? '')
   const [quantity, setQuantity] = useState(1)
   const variant = product.variants.find((v) => v.id === variantId)
 
-  if (!variant) return <p className="text-muted-foreground">Sản phẩm tạm ngừng kinh doanh.</p>
+  if (!variant) return <p className={c.muted}>Sản phẩm tạm ngừng kinh doanh.</p>
 
   const maxQuantity = Math.max(1, Math.min(MAX_LINE_QUANTITY, variant.availableQuantity))
   const inStock = variant.availableQuantity > 0
@@ -54,11 +60,21 @@ export function ProductPurchase({ product }: { product: ProductDetail }) {
 
   return (
     <div className="grid gap-5">
-      <PriceTag price={variant.price} compareAtPrice={variant.compareAtPrice} size="lg" />
+      <div className="flex flex-wrap items-center gap-4">
+        <PriceStamp
+          price={variant.price}
+          compareAtPrice={variant.compareAtPrice}
+          detail
+          className={cn('size-28 text-lg', c.rim)}
+        />
+        {variant.weightGrams ? (
+          <span className={cn('text-sm font-bold', c.muted)}>Khối lượng tịnh {variant.weightGrams}g</span>
+        ) : null}
+      </div>
 
       {product.variants.length > 1 ? (
         <fieldset className="grid gap-2">
-          <legend className="mb-2 text-sm font-medium">Phân loại</legend>
+          <legend className="mb-2 text-sm font-bold">Phân loại</legend>
           <div className="flex flex-wrap gap-2">
             {product.variants.map((v) => {
               const selected = v.id === variantId
@@ -67,10 +83,10 @@ export function ProductPurchase({ product }: { product: ProductDetail }) {
                 <label
                   key={v.id}
                   className={cn(
-                    'cursor-pointer rounded-lg border px-3 py-2 text-sm transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring',
+                    'cursor-pointer rounded-full border-2 px-4 py-2 text-sm font-bold transition-colors has-[:focus-visible]:ring-[3px] has-[:focus-visible]:ring-white/50',
                     selected
-                      ? 'border-primary bg-primary/5 font-medium text-primary'
-                      : 'hover:border-foreground/30',
+                      ? cn('border-card bg-card', c.rim)
+                      : 'border-white/50 bg-transparent hover:border-white',
                     soldOut && 'opacity-60',
                   )}
                 >
@@ -86,8 +102,8 @@ export function ProductPurchase({ product }: { product: ProductDetail }) {
                     className="sr-only"
                   />
                   {v.name}
-                  {v.weightGrams ? <span className="text-muted-foreground"> · {v.weightGrams}g</span> : null}
-                  {soldOut ? <span className="text-muted-foreground"> (hết hàng)</span> : null}
+                  {v.weightGrams ? <span className="opacity-80"> · {v.weightGrams}g</span> : null}
+                  {soldOut ? <span className="opacity-80"> (hết hàng)</span> : null}
                 </label>
               )
             })}
@@ -102,9 +118,13 @@ export function ProductPurchase({ product }: { product: ProductDetail }) {
           max={maxQuantity}
           disabled={!inStock}
           label="Số lượng"
+          className="rounded-full border-2 border-white/50 bg-card/15 [&_button]:text-current [&_button:hover]:bg-white/20 [&_input]:text-current"
         />
         <p
-          className={cn('text-sm', inStock ? 'text-muted-foreground' : 'font-medium text-destructive')}
+          className={cn(
+            'text-sm font-semibold',
+            inStock ? c.muted : 'rounded-full bg-card px-3 py-1 text-chili-deep',
+          )}
           aria-live="polite"
         >
           {inStock ? `Còn ${formatNumber(variant.availableQuantity)} sản phẩm` : 'Tạm hết hàng'}
@@ -115,6 +135,7 @@ export function ProductPurchase({ product }: { product: ProductDetail }) {
         <Button
           size="lg"
           variant="outline"
+          className="border-white/60 bg-transparent text-current hover:border-white hover:bg-white/15"
           disabled={!inStock}
           loading={cart.isMutating}
           onClick={() => addToCart(false)}
@@ -122,13 +143,18 @@ export function ProductPurchase({ product }: { product: ProductDetail }) {
           <ShoppingBag aria-hidden />
           Thêm vào giỏ
         </Button>
-        <Button size="lg" disabled={!inStock || cart.isMutating} onClick={() => addToCart(true)}>
+        <Button
+          size="lg"
+          variant={tone === 'mango' ? 'default' : 'secondary'}
+          disabled={!inStock || cart.isMutating}
+          onClick={() => addToCart(true)}
+        >
           Mua ngay
         </Button>
       </div>
-      <p className="text-xs text-muted-foreground">
+      <p className={cn('text-xs', c.muted)}>
         Không cần tài khoản để đặt hàng.{' '}
-        <Link href="/tra-cuu-don" className={buttonVariants({ variant: 'link', size: 'sm' })}>
+        <Link href="/tra-cuu-don" className="font-bold underline underline-offset-4">
           Tra cứu đơn
         </Link>
       </p>

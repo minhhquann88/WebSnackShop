@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { PageHeader } from '@/components/admin/page-header'
-import { StatTile } from '@/components/admin/stat-tile'
+import { StatLedger, StatTile } from '@/components/admin/stat-tile'
 import { SimpleBarChart } from '@/components/admin/charts'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -20,8 +20,8 @@ export default function AdminDashboardPage() {
     <>
       <PageHeader title="Tổng quan" description="Số liệu theo giờ Việt Nam, tự cập nhật mỗi phút." />
       {isPending ? (
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {Array.from({ length: 8 }, (_, i) => (
+        <div className="grid gap-3">
+          {Array.from({ length: 4 }, (_, i) => (
             <Skeleton key={i} className="h-24" />
           ))}
         </div>
@@ -29,33 +29,57 @@ export default function AdminDashboardPage() {
         <ErrorState message={getErrorMessage(error)} onRetry={() => void refetch()} />
       ) : (
         <div className="grid gap-6">
-          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <StatTile label="Doanh thu hôm nay" value={formatVnd(data.revenueToday)} />
-            <StatTile label="Doanh thu 7 ngày" value={formatVnd(data.revenueLast7Days)} />
-            <StatTile label="Doanh thu 30 ngày" value={formatVnd(data.revenueLast30Days)} />
-            <StatTile
-              label="Đơn đặt hôm nay"
-              value={formatNumber(data.ordersPlacedToday)}
-              href="/admin/don-hang"
-            />
-            <StatTile
-              label="Đơn chờ xác nhận"
-              value={formatNumber(data.pendingOrders)}
-              href="/admin/don-hang?status=Pending"
-              tone={data.pendingOrders > 0 ? 'warning' : 'default'}
-            />
-            <StatTile
-              label="Chuyển khoản chưa thanh toán"
-              value={formatNumber(data.unpaidBankTransfers)}
-              href="/admin/don-hang?paymentMethod=BankTransfer&paymentStatus=Unpaid"
-              tone={data.unpaidBankTransfers > 0 ? 'warning' : 'default'}
-            />
-            <StatTile
-              label="Phân loại sắp hết hàng"
-              value={formatNumber(data.lowStockCount)}
-              href="/admin/kho?lowStockOnly=true"
-              tone={data.lowStockCount > 0 ? 'warning' : 'default'}
-            />
+          <div className="grid gap-3 xl:grid-cols-[2fr_3fr]">
+            {/* The one figure the owner looks at first; the rest of the revenue reads as a ledger under it. */}
+            <section
+              aria-labelledby="revenue-heading"
+              className="grid content-start gap-4 rounded-2xl border bg-card p-5"
+            >
+              <h2 id="revenue-heading" className="text-sm font-semibold">
+                Doanh thu hôm nay
+              </h2>
+              <p className="font-display text-5xl leading-none font-extrabold text-chili-deep tabular-nums">
+                {formatVnd(data.revenueToday)}
+              </p>
+              <dl className="grid gap-1.5 border-t pt-3 text-sm">
+                <div className="flex justify-between gap-3">
+                  <dt className="text-muted-foreground">7 ngày qua</dt>
+                  <dd className="font-bold tabular-nums">{formatVnd(data.revenueLast7Days)}</dd>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <dt className="text-muted-foreground">30 ngày qua</dt>
+                  <dd className="font-bold tabular-nums">{formatVnd(data.revenueLast30Days)}</dd>
+                </div>
+                <div className="flex justify-between gap-3">
+                  <dt className="text-muted-foreground">Đơn đặt hôm nay</dt>
+                  <dd className="font-bold tabular-nums">
+                    <Link href="/admin/don-hang" className="text-chili-deep hover:underline">
+                      {formatNumber(data.ordersPlacedToday)}
+                    </Link>
+                  </dd>
+                </div>
+              </dl>
+            </section>
+            <StatLedger className="content-start sm:grid-cols-3 xl:grid-cols-3">
+              <StatTile
+                label="Đơn chờ xác nhận"
+                value={formatNumber(data.pendingOrders)}
+                href="/admin/don-hang?status=Pending"
+                tone={data.pendingOrders > 0 ? 'warning' : 'default'}
+              />
+              <StatTile
+                label="Chuyển khoản chưa thanh toán"
+                value={formatNumber(data.unpaidBankTransfers)}
+                href="/admin/don-hang?paymentMethod=BankTransfer&paymentStatus=Unpaid"
+                tone={data.unpaidBankTransfers > 0 ? 'warning' : 'default'}
+              />
+              <StatTile
+                label="Phân loại sắp hết hàng"
+                value={formatNumber(data.lowStockCount)}
+                href="/admin/kho?lowStockOnly=true"
+                tone={data.lowStockCount > 0 ? 'warning' : 'default'}
+              />
+            </StatLedger>
           </div>
 
           <div className="grid gap-6 xl:grid-cols-2">

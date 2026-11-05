@@ -11,6 +11,7 @@ Frontend sống ở `frontend/`, là **client của API**, không chứa logic n
 | Framework | Next.js 16 (App Router), React 19, TypeScript 5.9 `strict` | Pin version chính xác trong `package.json` (`.npmrc save-exact`) |
 | Package manager | `pnpm` | Lockfile commit |
 | UI | Tailwind CSS 4 + component kiểu shadcn/ui (Radix) | Component copy vào `src/components/ui`, dễ chỉnh. Biểu đồ admin: Recharts |
+| Hệ thống thiết kế | [`DESIGN.md`](../DESIGN.md) (thế giới "bao bì snack Việt": token màu/chữ/bo góc/chuyển động, utility `stripes`, `bag`, `burst`, `stamp`, `lift`...) | Nguồn sự thật về giao diện; sidecar máy đọc: `.impeccable/design.json`. Đổi token → sửa `globals.css` và DESIGN.md cùng PR. Skill thiết kế: `.agents/skills/impeccable` (cài bằng `npx impeccable@latest install --project`) |
 | Server state | TanStack Query | Cache, retry, invalidate |
 | Client state | Zustand (giỏ hàng guest, UI state) | Nhỏ gọn; persist `localStorage` cho cart |
 | Form | React Hook Form + Zod | Schema Zod sinh từ OpenAPI khi có thể |

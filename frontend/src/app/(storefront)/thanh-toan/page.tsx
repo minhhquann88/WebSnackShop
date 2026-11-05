@@ -144,7 +144,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="grid gap-6">
-      <h1 className="text-2xl font-bold">Thanh toán</h1>
+      <h1 className="font-display text-3xl leading-none font-extrabold">Thanh toán</h1>
       {cart.mode === 'guest' ? (
         <Alert>
           Bạn đang đặt hàng không cần tài khoản.{' '}
@@ -157,7 +157,12 @@ export default function CheckoutPage() {
       <form onSubmit={onSubmit} noValidate className="grid gap-6 lg:grid-cols-[1fr_360px]">
         <div className="grid content-start gap-6">
           <Card>
-            <CardTitle>Thông tin liên hệ</CardTitle>
+            <CardTitle>
+              <span className="mr-2 step-disc align-middle" aria-hidden>
+                1
+              </span>
+              Thông tin liên hệ
+            </CardTitle>
             <FormField
               id="contactEmail"
               label="Email nhận thông báo đơn hàng"
@@ -170,7 +175,12 @@ export default function CheckoutPage() {
 
           <Card>
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <CardTitle>Địa chỉ giao hàng</CardTitle>
+              <CardTitle>
+                <span className="mr-2 step-disc align-middle" aria-hidden>
+                  2
+                </span>
+                Địa chỉ giao hàng
+              </CardTitle>
               {isUser && addresses.data && addresses.data.length > 0 ? (
                 <div className="flex items-center gap-2">
                   <Label htmlFor="saved-address" className="text-muted-foreground">
@@ -206,19 +216,24 @@ export default function CheckoutPage() {
           </Card>
 
           <Card>
-            <CardTitle>Phương thức thanh toán</CardTitle>
+            <CardTitle>
+              <span className="mr-2 step-disc align-middle" aria-hidden>
+                3
+              </span>
+              Phương thức thanh toán
+            </CardTitle>
             <fieldset className="grid gap-2">
               <legend className="sr-only">Phương thức thanh toán</legend>
               {(['Cod', 'BankTransfer'] as const).map((method) => (
                 <label
                   key={method}
-                  className="flex cursor-pointer items-start gap-3 rounded-lg border p-3 has-[:checked]:border-primary has-[:checked]:bg-primary/5"
+                  className="flex cursor-pointer items-start gap-3 rounded-lg border bg-card p-3 transition-colors has-[:checked]:border-chili has-[:checked]:bg-chili-tint"
                 >
                   <input
                     type="radio"
                     value={method}
                     {...register('paymentMethod')}
-                    className="mt-1 accent-primary"
+                    className="mt-1 accent-chili"
                   />
                   <span className="grid gap-0.5">
                     <span className="font-medium">{paymentMethodLabels[method]}</span>
@@ -254,7 +269,7 @@ export default function CheckoutPage() {
                   <li key={line.variantId} className="flex gap-3 text-sm">
                     <RemoteImage src={line.imageUrl} alt="" className="size-12 shrink-0 rounded-md" />
                     <div className="min-w-0 flex-1">
-                      <p className="line-clamp-1 font-medium">{line.productName}</p>
+                      <p className="line-clamp-1 font-semibold">{line.productName}</p>
                       <p className="text-muted-foreground">
                         {line.variantName} × {line.quantity}
                       </p>

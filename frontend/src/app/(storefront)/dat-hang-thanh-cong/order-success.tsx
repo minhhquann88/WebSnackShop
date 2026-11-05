@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useState } from 'react'
-import { CheckCircle2 } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
 import { buttonVariants } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Alert, Spinner } from '@/components/ui/feedback'
@@ -35,7 +35,10 @@ export function OrderSuccess() {
   if (!orderNumber) {
     return (
       <Alert variant="error">
-        Không tìm thấy mã đơn hàng. <Link href="/tra-cuu-don">Tra cứu đơn hàng</Link>
+        Không tìm thấy mã đơn hàng.{' '}
+        <Link href="/tra-cuu-don" className="underline">
+          Tra cứu đơn hàng
+        </Link>
       </Alert>
     )
   }
@@ -44,18 +47,23 @@ export function OrderSuccess() {
 
   return (
     <div className="mx-auto grid max-w-3xl gap-6">
-      <Card className="items-center text-center">
-        <CheckCircle2 className="size-14 text-success" aria-hidden />
-        <h1 className="text-2xl font-bold">Đặt hàng thành công!</h1>
-        <p className="text-muted-foreground">
-          Cảm ơn bạn đã mua hàng. Mã đơn của bạn là <strong className="text-foreground">{orderNumber}</strong>
+      <Card className="items-center gap-3 text-center">
+        <Badge shape="stamp" variant="success" className="text-sm">
+          Đã nhận đơn
+        </Badge>
+        <h1 className="font-display text-4xl leading-none font-extrabold">Đặt hàng thành công!</h1>
+        <p className="max-w-prose text-muted-foreground">
+          Cảm ơn bạn đã mua hàng. Mã đơn của bạn là{' '}
+          <strong className="rounded-md bg-mango px-1.5 font-display text-lg font-extrabold text-foreground">
+            {orderNumber}
+          </strong>
           . Chúng tôi đã gửi email xác nhận kèm thông tin đơn hàng.
         </p>
         {order ? (
           <dl className="grid gap-1 text-sm">
-            <div className="flex justify-center gap-2">
+            <div className="flex items-baseline justify-center gap-2">
               <dt className="text-muted-foreground">Tổng thanh toán:</dt>
-              <dd className="font-semibold text-primary">{formatVnd(order.total)}</dd>
+              <dd className="font-display text-xl font-bold text-foreground">{formatVnd(order.total)}</dd>
             </div>
             <div className="flex justify-center gap-2">
               <dt className="text-muted-foreground">Thanh toán:</dt>

@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { PageHeader } from '@/components/admin/page-header'
-import { StatTile } from '@/components/admin/stat-tile'
+import { StatLedger, StatTile } from '@/components/admin/stat-tile'
 import { OrderStatusBadge, PaymentStatusBadge } from '@/components/common/status-badges'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardTitle } from '@/components/ui/card'
@@ -31,11 +31,11 @@ export default function AdminCustomerDetailPage() {
         <ErrorState message={getErrorMessage(query.error)} onRetry={() => void query.refetch()} />
       ) : (
         <div className="grid gap-6">
-          <div className="grid gap-4 sm:grid-cols-3">
+          <StatLedger>
             <StatTile label="Số đơn" value={formatNumber(query.data.orderCount)} />
             <StatTile label="Tổng chi tiêu" value={formatVnd(query.data.totalSpent)} />
             <StatTile label="Tham gia" value={formatDate(query.data.createdAt)} />
-          </div>
+          </StatLedger>
           <div className="grid gap-6 xl:grid-cols-3">
             <Card className="xl:col-span-2">
               <CardTitle>Đơn hàng gần đây</CardTitle>

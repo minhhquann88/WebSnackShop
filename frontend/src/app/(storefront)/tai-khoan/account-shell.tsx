@@ -16,14 +16,17 @@ const NAV = [
   { href: '/tai-khoan/mat-khau', label: 'Đổi mật khẩu', icon: KeyRound, exact: false },
 ] as const
 
+/** Account sections are printed pills: the active one is filled chili. */
 export function AccountShell({ children }: { children: ReactNode }) {
   const pathname = usePathname()
   const user = useAuthStore((s) => s.user)
   return (
     <RequireAuth>
       <div className="grid gap-6 md:grid-cols-[220px_1fr]">
-        <nav aria-label="Tài khoản" className="md:sticky md:top-24 md:h-fit">
-          <p className="mb-3 hidden truncate font-semibold md:block">{user?.fullName}</p>
+        <nav aria-label="Tài khoản" className="md:sticky md:top-32 md:h-fit">
+          <p className="mb-3 hidden truncate font-display text-2xl font-extrabold md:block">
+            {user?.fullName}
+          </p>
           <ul className="flex gap-1 overflow-x-auto md:flex-col">
             {NAV.map((item) => {
               const active = item.exact ? pathname === item.href : pathname.startsWith(item.href)
@@ -34,8 +37,8 @@ export function AccountShell({ children }: { children: ReactNode }) {
                     href={item.href}
                     aria-current={active ? 'page' : undefined}
                     className={cn(
-                      'flex items-center gap-2 rounded-md px-3 py-2 text-sm whitespace-nowrap hover:bg-accent',
-                      active && 'bg-accent font-medium text-primary',
+                      'flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold whitespace-nowrap transition-colors',
+                      active ? 'bg-chili text-primary-foreground' : 'hover:bg-cream-2 hover:text-chili-deep',
                     )}
                   >
                     <Icon className="size-4" aria-hidden />

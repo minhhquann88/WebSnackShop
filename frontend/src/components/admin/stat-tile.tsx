@@ -2,6 +2,16 @@ import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
+/** A row of figure cartons on the counter. Wrap `StatTile`s in it. */
+export function StatLedger({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <ul className={cn('grid gap-3 sm:grid-cols-2 xl:grid-cols-4', className)} data-slot="stat-ledger">
+      {children}
+    </ul>
+  )
+}
+
+/** One figure carton: label on top, the figure printed large; warning tone gets a mango field. */
 export function StatTile({
   label,
   value,
@@ -17,19 +27,37 @@ export function StatTile({
 }) {
   const body = (
     <>
-      <p className="text-sm text-muted-foreground">{label}</p>
-      <p className={cn('text-2xl font-bold tabular-nums', tone === 'warning' && 'text-[oklch(0.5_0.14_60)]')}>
+      <span className="text-sm font-semibold">{label}</span>
+      <span
+        className={cn(
+          'font-display text-3xl leading-none font-extrabold tabular-nums',
+          tone === 'warning' ? 'text-foreground' : 'text-chili-deep',
+        )}
+      >
         {value}
-      </p>
-      {hint ? <p className="text-xs text-muted-foreground">{hint}</p> : null}
+      </span>
+      {hint ? <span className="text-xs text-muted-foreground">{hint}</span> : null}
     </>
   )
-  const className = 'grid gap-1 rounded-xl border bg-card p-4 shadow-xs'
-  return href ? (
-    <Link href={href} className={cn(className, 'transition-colors hover:border-primary/50')}>
-      {body}
-    </Link>
-  ) : (
-    <div className={className}>{body}</div>
+  const box = cn(
+    'grid h-full content-start gap-2 rounded-2xl p-4',
+    tone === 'warning' ? 'bg-mango' : 'border bg-card',
+  )
+  return (
+    <li className="min-w-0">
+      {href ? (
+        <Link
+          href={href}
+          className={cn(
+            box,
+            'transition-colors lift focus-visible:ring-[3px] focus-visible:ring-ring/40 focus-visible:outline-none',
+          )}
+        >
+          {body}
+        </Link>
+      ) : (
+        <div className={box}>{body}</div>
+      )}
+    </li>
   )
 }
