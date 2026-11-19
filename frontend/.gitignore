@@ -10,3 +10,6 @@ next-env.d.ts
 .env.*.local
 npm-debug.log*
 pnpm-debug.log*
+test-results
+playwright-report
+blob-report

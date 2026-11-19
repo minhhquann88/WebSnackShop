@@ -17,7 +17,8 @@
     "test:watch": "vitest",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "gen:api": "openapi-typescript ../backend/openapi.json -o src/lib/api/schema.d.ts"
+    "gen:api": "openapi-typescript ../backend/openapi.json -o src/lib/api/schema.d.ts",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@hookform/resolvers": "6.0.0",
@@ -39,6 +40,7 @@
     "zustand": "5.0.16"
   },
   "devDependencies": {
+    "@playwright/test": "1.56.1",
     "@tailwindcss/postcss": "4.3.3",
     "@testing-library/dom": "10.4.2",
     "@testing-library/jest-dom": "7.0.1",

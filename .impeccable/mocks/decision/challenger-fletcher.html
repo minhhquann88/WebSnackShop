@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><title>SnackShop - Fletcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+html,body{width:1440px;height:900px;overflow:hidden;margin:0}
+body{background:#FFFFFF;color:#111111;font-family:'Be Vietnam Pro',sans-serif;position:relative}
+.m{font-family:'Permanent Marker',cursive}
+.abs{position:absolute}
+header{position:absolute;left:48px;right:48px;top:20px;height:56px;border-bottom:2px solid #111;display:flex;justify-content:space-between;align-items:center}
+header .logo{font-size:36px;color:#1F4FD8;transform:rotate(-2deg)}
+header nav{font-size:14px;display:flex;gap:10px}
+/* chicken */
+.chick{left:70px;top:130px;width:620px;height:380px;transform:rotate(-4deg)}
+.body{left:60px;top:70px;width:420px;height:270px;background:#4BA33B;border-radius:62% 38% 55% 45% / 55% 60% 40% 45%}
+.tail{left:10px;top:120px;width:130px;height:150px;background:#4BA33B;border-radius:80% 20% 60% 40%;transform:rotate(-30deg)}
+.neck{left:380px;top:20px;width:130px;height:200px;background:#4BA33B;border-radius:50% 50% 40% 60%;transform:rotate(14deg)}
+.head{left:430px;top:0;width:110px;height:100px;background:#4BA33B;border-radius:50%}
+.comb{left:455px;top:-30px;width:34px;height:50px;background:#E8402D;border-radius:50% 50% 20% 20%}
+.comb.b{left:480px;top:-40px;transform:rotate(12deg)}
+.comb.c{left:505px;top:-26px;transform:rotate(26deg);width:28px}
+.beak{left:535px;top:34px;width:0;height:0;border-left:56px solid #E8402D;border-top:14px solid transparent;border-bottom:14px solid transparent}
+.eye{left:488px;top:30px;width:14px;height:14px;border-radius:50%;background:#fff;border:5px solid #111;box-sizing:border-box}
+.wing{left:170px;top:140px;width:190px;height:110px;background:#fff;border-radius:10% 90% 60% 40%;transform:rotate(12deg)}
+.leg{width:10px;height:90px;background:#E8402D;top:300px}
+.cr{border:12px solid;border-radius:48% 52% 45% 55%;opacity:.5}
+.cr1{left:30px;top:50px;width:470px;height:320px;border-color:#E8402D;transform:rotate(5deg)}
+.cr2{left:0;top:90px;width:520px;height:290px;border-color:#1F4FD8;transform:rotate(-7deg);opacity:.4}
+.lbl{left:200px;top:168px;font-size:15px;font-weight:600;transform:rotate(12deg);color:#111}
+h1{left:56px;top:612px;margin:0;font-size:56px;font-weight:400;color:#111;transform:rotate(-1.5deg);line-height:1}
+h1 span{color:#E8402D}
+.sub{left:60px;top:700px;width:640px;font-size:18px;line-height:1.5}
+/* pieces */
+.p{width:300px;height:116px;display:flex;align-items:center;justify-content:center}
+.p .lab{background:#fff;width:210px;padding:10px 12px;font-size:16px;font-weight:600;line-height:1.3;box-shadow:2px 3px 0 rgba(17,17,17,.25)}
+.lab small{display:block;font-weight:400;font-size:14px}
+.lab s{font-weight:400;color:#111;opacity:.6}
+.lab em{font-style:normal;color:#E8402D;font-weight:600}
+.btn{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:#fff;position:absolute;right:-6px;bottom:-14px}
+.p1{left:800px;top:112px;background:#1F4FD8;transform:rotate(-3deg);border-radius:6px}
+.p2{left:1090px;top:156px;background:#4BA33B;transform:rotate(3deg);border-radius:60px}
+.p3{left:790px;top:278px;background:#E8402D;transform:rotate(2deg);border-radius:4px 30px 4px 30px}
+.p4{left:1080px;top:318px;background:#1F4FD8;transform:rotate(-2deg);border-radius:50px}
+.p5{left:880px;top:444px;background:#4BA33B;transform:rotate(4deg);border-radius:8px}
+.p1 .btn{background:#E8402D}.p2 .btn{background:#1F4FD8}.p3 .btn{background:#1F4FD8}.p4 .btn{background:#E8402D}.p5 .btn{background:#E8402D}
+.scrawl{left:784px;top:98px;width:324px;height:140px;border:5px dashed #E8402D;border-radius:14px;transform:rotate(-6deg);opacity:.85}
+.feat{left:800px;top:70px;font-size:20px;color:#E8402D;transform:rotate(-4deg)}
+/* tags */
+.tags{left:790px;top:620px;width:600px;display:flex;flex-wrap:wrap;gap:14px 10px}
+.t{padding:8px 14px;font-size:14px;font-weight:600;color:#fff}
+.t:nth-child(1){background:#111;transform:rotate(-2deg)}
+.t:nth-child(2){background:#1F4FD8;transform:rotate(1.5deg);border-radius:12px 2px}
+.t:nth-child(3){background:#4BA33B;transform:rotate(-1deg)}
+.t:nth-child(4){background:#E8402D;transform:rotate(2.5deg);border-radius:2px 14px}
+.t:nth-child(5){background:#1F4FD8;transform:rotate(-2.5deg)}
+.t:nth-child(6){background:#4BA33B;transform:rotate(1deg);border-radius:14px 2px}
+.cap{left:790px;top:580px;font-size:22px;color:#1F4FD8;transform:rotate(-2deg)}
+footer{position:absolute;left:48px;right:48px;bottom:16px;border-top:1px solid #111;padding-top:8px;font-size:12px}
+</style></head><body>
+<header><div class="logo m">SnackShop</div><nav><span>Thực đơn</span>·<span>Tra cứu đơn</span>·<span>Đăng nhập</span>·<span>Giỏ hàng (3)</span></nav></header>
+
+<div class="abs chick">
+ <div class="abs cr cr2"></div>
+ <div class="abs tail"></div><div class="abs neck"></div><div class="abs body"></div><div class="abs head"></div>
+ <div class="abs comb"></div><div class="abs comb b"></div><div class="abs comb c"></div>
+ <div class="abs beak"></div><div class="abs eye"></div><div class="abs wing"></div>
+ <div class="abs lbl m">khô gà</div>
+ <div class="abs leg" style="left:200px"></div><div class="abs leg" style="left:290px"></div>
+ <div class="abs cr cr1"></div>
+</div>
+<h1 class="abs m">Gà không gáy, <span>gà để nhai.</span></h1>
+<p class="abs sub" style="margin:0">Khô gà lá chanh, bánh tráng trộn, hạt sấy. Đặt không cần tài khoản, COD hoặc VietQR.</p>
+
+<div class="abs feat m">món đang chọn</div>
+<div class="abs scrawl"></div>
+<div class="abs p p1"><div class="lab">Khô gà lá chanh<small>85.000 ₫</small></div><div class="btn m">Thêm</div></div>
+<div class="abs p p2"><div class="lab">Bánh tráng trộn Tây Ninh<small>25.000 ₫</small></div><div class="btn m">Thêm</div></div>
+<div class="abs p p3"><div class="lab">Hạt điều rang muối<small>120.000 ₫</small></div><div class="btn m">Thêm</div></div>
+<div class="abs p p4"><div class="lab">Bánh pía sầu riêng<small><s>102.000 ₫</s> 85.000 ₫ <em>-17%</em></small></div><div class="btn m">Thêm</div></div>
+<div class="abs p p5"><div class="lab">Xoài sấy dẻo<small>45.000 ₫</small></div><div class="btn m">Thêm</div></div>
+
+<div class="abs cap m">Chọn vị:</div>
+<div class="abs tags"><span class="t">Tất cả</span><span class="t">Khô gà &amp; khô bò</span><span class="t">Bánh tráng</span><span class="t">Hạt &amp; trái cây sấy</span><span class="t">Kẹo &amp; bánh ngọt</span><span class="t">Đồ uống</span></div>
+<footer>SnackShop · Giao toàn quốc · COD / VietQR</footer>
+</body></html>

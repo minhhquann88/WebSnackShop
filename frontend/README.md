@@ -41,6 +41,7 @@ Tài khoản admin seed: `admin@snackshop.local` / `Admin12345`. Email (xác nh�
 | `pnpm lint`                         | ESLint (next/core-web-vitals + typescript-eslint strict + prettier)                                                   |
 | `pnpm typecheck`                    | `next typegen && tsc --noEmit`                                                                                        |
 | `pnpm test`                         | Vitest + Testing Library (format, map lỗi, giỏ hàng, PriceTag)                                                        |
+| `pnpm test:e2e`                     | Playwright luồng đặt hàng (`e2e/`), cần API + web đang chạy — xem docs/09 §9                                          |
 | `pnpm format` / `pnpm format:check` | Prettier (+ sắp xếp class Tailwind)                                                                                   |
 | `pnpm gen:api`                      | Sinh lại `src/lib/api/schema.d.ts` từ `../backend/openapi.json` — **không sửa tay file sinh**, commit kèm khi API đổi |
 

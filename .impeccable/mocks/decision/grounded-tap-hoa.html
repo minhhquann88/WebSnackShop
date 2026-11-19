@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><title>SnackShop - Kệ tạp hóa</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+html,body{width:1440px;height:900px;overflow:hidden;margin:0;font-family:'Be Vietnam Pro',sans-serif;color:#1F2937;background:#fff}
+*{box-sizing:border-box}
+.hd{height:64px;display:flex;align-items:center;gap:24px;padding:0 48px;border-bottom:1px solid #E5E7EB}
+.logo{font-weight:800;font-size:26px;display:flex;align-items:center;gap:10px}
+.logo i{width:22px;height:22px;background:#FF6A13;border-radius:6px;display:inline-block}
+.search{flex:1;max-width:640px;height:42px;background:#F3F4F6;border-radius:21px;padding:0 20px;display:flex;align-items:center;color:#6B7280;font-size:15px}
+.hd .r{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:15px;font-weight:600}
+.cart{position:relative;width:42px;height:42px;border:1px solid #E5E7EB;border-radius:10px}
+.cart b{position:absolute;top:-8px;right:-8px;background:#FF6A13;color:#fff;font-size:12px;border-radius:999px;padding:2px 7px}
+.sign{position:relative;margin:0 auto;width:760px;height:118px;border:2px solid #1F2937;border-radius:14px;padding:18px 28px;display:flex;align-items:center;gap:28px;background:#fff}
+.sign:before,.sign:after{content:"";position:absolute;top:-30px;width:2px;height:30px;background:#9CA3AF}
+.sign:before{left:60px}.sign:after{right:60px}
+.sign h1{margin:0;font-size:40px;font-weight:800;line-height:1}
+.sign p{margin:6px 0 0;font-size:15px;color:#4B5563}
+.btn{background:#FF6A13;color:#fff;font-weight:600;font-size:15px;padding:12px 22px;border-radius:10px;white-space:nowrap}
+.wrap{margin-top:40px;padding:0 48px}
+.tier{position:relative;height:232px;padding:0 0 22px}
+.tier:before{content:"";position:absolute;left:0;right:0;top:0;height:60px;background:linear-gradient(#fff,transparent);z-index:2;pointer-events:none}
+.row{display:flex;gap:10px;align-items:flex-end;height:210px}
+.bag{position:relative;flex:1;height:196px;border-radius:14px;overflow:hidden;background:#F3F4F6;border:1px solid #E5E7EB}
+.bag .ph{height:75%;}
+.bag .nm{height:25%;background:#fff;padding:8px 12px;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bag .add{position:absolute;top:8px;right:8px;background:#fff;border:1px solid #1F2937;border-radius:999px;font-size:11px;font-weight:600;padding:4px 9px}
+.shelf{position:absolute;left:0;right:0;bottom:0;height:22px;background:linear-gradient(#fff,#F3F4F6 30%,#E5E7EB);box-shadow:0 6px 10px -4px rgba(0,0,0,.25);border-radius:3px}
+.tag{position:absolute;left:0;bottom:4px;background:#1F2937;color:#fff;font-size:13px;font-weight:600;padding:6px 12px;border-radius:6px;z-index:3}
+.price{position:absolute;bottom:-6px;left:12px;background:#FF6A13;color:#fff;font-weight:800;font-size:15px;padding:5px 10px;border-radius:5px;box-shadow:0 2px 4px rgba(0,0,0,.25);z-index:3}
+.price s{font-weight:400;font-size:11px;opacity:.85;margin-left:4px}
+.ok{position:absolute;bottom:-6px;right:12px;font-size:11px;color:#2E9E5B;font-weight:600;background:#fff;padding:5px 8px;border-radius:5px;z-index:3;border:1px solid #E5E7EB}
+.ok:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#2E9E5B;margin-right:5px}
+.p1{background:linear-gradient(135deg,#C9772E,#8A4A14)}.p2{background:linear-gradient(135deg,#E8A24A,#B5562A)}.p3{background:linear-gradient(135deg,#D9B37C,#9C6B2E)}
+.p4{background:linear-gradient(135deg,#F2C35B,#C77A2A)}.p5{background:linear-gradient(135deg,#F0A23B,#D6621E)}.p6{background:linear-gradient(135deg,#7A3B1E,#4A2110)}
+.p7{background:linear-gradient(135deg,#E86A3C,#B33A18)}.p8{background:linear-gradient(135deg,#F6E1B8,#C9A66B)}.p9{background:linear-gradient(135deg,#C84B2D,#8B2A12)}.p10{background:linear-gradient(135deg,#E6C27A,#A97A3A)}
+</style></head><body>
+<div class="hd"><div class="logo"><i></i>SnackShop</div><div class="search">Tìm khô gà, bánh tráng...</div><div class="r"><span>Đăng nhập</span><span class="cart"><b>3</b></span></div></div>
+<div style="height:30px"></div>
+<div class="sign"><div><h1>Tối nay ăn vặt gì?</h1><p>Khô gà, bánh tráng, hạt sấy. Đặt không cần tài khoản, COD hoặc quét VietQR.</p></div><span class="btn">Xem thực đơn</span></div>
+<div class="wrap">
+<div class="tier"><div class="row">
+<div class="bag"><div class="ph p1"></div><div class="nm">Khô gà lá chanh</div><span class="add">Thêm vào giỏ</span><span class="price">85.000 ₫</span><span class="ok">Còn hàng</span></div>
+<div class="bag"><div class="ph p2"></div><div class="nm">Bánh tráng trộn Tây Ninh</div><span class="add">Thêm vào giỏ</span><span class="price">25.000 ₫</span></div>
+<div class="bag"><div class="ph p3"></div><div class="nm">Hạt điều rang muối</div><span class="add">Thêm vào giỏ</span><span class="price">120.000 ₫</span></div>
+<div class="bag"><div class="ph p4"></div><div class="nm">Bánh pía sầu riêng</div><span class="add">Thêm vào giỏ</span><span class="price">85.000 ₫<s>102.000 ₫</s> -17%</span></div>
+<div class="bag"><div class="ph p5"></div><div class="nm">Xoài sấy dẻo</div><span class="add">Thêm vào giỏ</span><span class="price">45.000 ₫</span></div>
+<div class="bag"><div class="ph p6"></div><div class="nm">Khô bò miếng</div><span class="add">Thêm vào giỏ</span><span class="price">95.000 ₫</span></div>
+</div><div class="shelf"></div><span class="tag">Món bán chạy</span></div>
+<div class="tier"><div class="row">
+<div class="bag"><div class="ph p1"></div><div class="nm">Khô gà lá chanh</div><span class="price">85.000 ₫</span></div>
+<div class="bag"><div class="ph p9"></div><div class="nm">Khô gà cay</div><span class="price">90.000 ₫</span><span class="ok">Còn hàng</span></div>
+<div class="bag"><div class="ph p6"></div><div class="nm">Khô bò miếng</div><span class="price">95.000 ₫</span></div>
+<div class="bag"><div class="ph p7"></div><div class="nm">Khô gà lá chanh (500g)</div><span class="price">160.000 ₫</span></div>
+<div class="bag"><div class="ph p3"></div><div class="nm">Hạt điều rang muối</div><span class="price">120.000 ₫</span></div>
+<div class="bag"><div class="ph p8"></div><div class="nm">Kẹo dừa Bến Tre</div><span class="price">35.000 ₫</span></div>
+</div><div class="shelf"></div><span class="tag">Khô gà &amp; khô bò</span></div>
+<div class="tier"><div class="row">
+<div class="bag"><div class="ph p2"></div><div class="nm">Bánh tráng trộn Tây Ninh</div><span class="price">25.000 ₫</span></div>
+<div class="bag"><div class="ph p10"></div><div class="nm">Bánh tráng muối tôm</div><span class="price">20.000 ₫</span></div>
+<div class="bag"><div class="ph p8"></div><div class="nm">Bánh tráng phơi sương</div><span class="price">30.000 ₫</span></div>
+<div class="bag"><div class="ph p5"></div><div class="nm">Xoài sấy dẻo</div><span class="price">45.000 ₫</span></div>
+<div class="bag"><div class="ph p4"></div><div class="nm">Bánh pía sầu riêng</div><span class="price">85.000 ₫</span></div>
+<div class="bag"><div class="ph p7"></div><div class="nm">Khô gà cay</div><span class="price">90.000 ₫</span></div>
+</div><div class="shelf"></div><span class="tag">Bánh tráng</span></div>
+</div>
+</body></html>

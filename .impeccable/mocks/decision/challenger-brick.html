@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><title>SnackShop - Brick</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--b:#7EC8F0;--k:#111111;--r:#D7262A;--y:#F4D21E;--w:#fff}
+*{box-sizing:border-box}
+html,body{width:1440px;height:900px;overflow:hidden;margin:0}
+body{position:relative;font-family:"Be Vietnam Pro",sans-serif;color:var(--k);background-color:var(--b);
+background-image:radial-gradient(circle,rgba(255,255,255,.55) 0 3px,transparent 3.5px);background-size:24px 24px;background-position:12px 12px}
+.abs{position:absolute}
+.top{left:16px;top:16px;width:1408px;height:64px;background:var(--w);border:3px solid var(--k);display:flex;align-items:center;padding:0 12px;gap:24px}
+.logo{font-weight:800;font-size:28px;letter-spacing:-.5px}
+.search{width:480px;height:40px;border:3px solid var(--k);background:var(--w);display:flex;align-items:center;padding:0 14px;font-size:15px;color:#555}
+.sp{flex:1}
+.login{font-weight:600;font-size:16px;border:3px solid var(--k);padding:6px 16px}
+.cart{width:72px;height:44px;border:3px solid var(--k);background:var(--y);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px}
+.n1{left:32px;top:84px;font-weight:900;font-size:320px;line-height:1;letter-spacing:-12px}
+.cap{left:40px;top:392px;font-size:24px;font-weight:600}
+.gh{left:40px;font-weight:900;font-size:96px;line-height:1;opacity:.6;display:flex;align-items:baseline;gap:16px}
+.gh span{font-size:18px;font-weight:600}
+.call{left:440px;top:230px;width:560px;height:420px;background:var(--w);border:4px solid var(--k);padding:32px;display:flex;gap:28px;align-items:center}
+.call:after{content:"";position:absolute;right:-4px;top:-4px;width:52px;height:52px;background:var(--b);border-left:4px solid var(--k);border-bottom:4px solid var(--k)}
+.piece{width:230px;height:300px;background:var(--r);border:4px solid var(--k);border-radius:20px;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:inset 0 -10px 0 rgba(0,0,0,.18)}
+.food{border:4px solid var(--k);border-radius:50%;width:170px;height:170px;background:radial-gradient(circle at 35% 30%,#F6C27A 0 12%,#D98A3A 35%,#8A4A1C 75%,#5C2E10)}
+.info{display:flex;flex-direction:column;gap:14px}
+.nm{font-weight:600;font-size:22px;line-height:1.25}
+.pr{font-weight:800;font-size:32px}
+.btn{background:var(--y);border:3px solid var(--k);border-radius:8px;padding:12px 14px;font-weight:800;font-size:16px;text-align:center;box-shadow:4px 4px 0 var(--k)}
+.bar{background:var(--k)}
+.head{width:0;height:0;border-left:22px solid transparent;border-right:22px solid transparent;border-bottom:30px solid var(--k)}
+.inv{left:1044px;top:96px;width:380px;height:788px;background:var(--y);border:4px solid var(--k);padding:48px 20px 20px}
+.inv h2{margin:0 0 16px;font-weight:800;font-size:18px}
+.row{height:88px;background:var(--w);border:3px solid var(--k);display:flex;align-items:center;gap:12px;padding:0 12px;margin-bottom:14px}
+.sq{width:56px;height:56px;border:3px solid var(--k);border-radius:8px;flex:none}
+.a{background:radial-gradient(circle at 40% 35%,#FFF1C9,#E9C46A 55%,#B8862B)}
+.c{background:radial-gradient(circle at 40% 35%,#F5D9A0,#D9A441 55%,#8F5E1B)}
+.d{background:radial-gradient(circle at 40% 35%,#F2B77A,#D4762F 55%,#8A3F12)}
+.e{background:radial-gradient(circle at 40% 35%,#FFD27A,#F29E1F 55%,#B25A0A)}
+.f{background:radial-gradient(circle at 40% 35%,#C98A66,#8E4A2C 55%,#4E2512)}
+.g{background:radial-gradient(circle at 40% 35%,#FFF6E6,#E8D3A8 55%,#C2A06A)}
+.t{flex:1;font-size:14px;font-weight:600;line-height:1.3}
+.q{font-weight:800;font-size:14px}
+.p{font-weight:800;font-size:14px;text-align:right;min-width:76px}
+.p s{display:block;font-weight:400;font-size:12px;color:#555}
+.p b{display:inline-block;background:var(--r);color:var(--w);font-size:11px;padding:1px 5px;border:2px solid var(--k);margin-top:2px}
+.chips{left:16px;top:836px;display:flex;gap:12px}
+.chip{background:var(--w);border:3px solid var(--k);padding:11px 18px;font-weight:600;font-size:15px;height:48px;display:flex;align-items:center}
+.chip.on{background:var(--r);color:var(--w);font-weight:800}
+</style></head><body>
+<div class="abs top"><div class="logo">SnackShop</div><div class="search">Tìm món ăn vặt…</div><div class="sp"></div><div class="login">Đăng nhập</div><div class="cart">3</div></div>
+
+<div class="abs n1">1</div>
+<div class="abs cap">Chọn món</div>
+<div class="abs gh" style="top:470px">2<span>Thanh toán</span></div>
+<div class="abs gh" style="top:590px">3<span>Nhận hàng</span></div>
+
+<div class="abs call">
+  <div class="piece"><div class="food"></div></div>
+  <div class="info"><div class="nm">Khô gà lá chanh</div><div class="pr">85.000 ₫</div><div class="btn">Thêm vào giỏ</div></div>
+</div>
+<div class="abs bar" style="left:752px;top:112px;width:16px;height:118px"></div>
+<div class="abs bar" style="left:752px;top:112px;width:636px;height:16px"></div>
+<div class="abs bar" style="left:1372px;top:100px;width:16px;height:28px"></div>
+<div class="abs head" style="left:1358px;top:82px;width:0;border-bottom-width:24px;z-index:3"></div>
+
+<div class="abs inv"><h2>Linh kiện</h2>
+  <div class="row"><div class="sq a"></div><div class="t">Bánh tráng trộn Tây Ninh</div><div class="q">×1</div><div class="p">25.000 ₫</div></div>
+  <div class="row"><div class="sq c"></div><div class="t">Hạt điều rang muối</div><div class="q">×1</div><div class="p">120.000 ₫</div></div>
+  <div class="row"><div class="sq d"></div><div class="t">Bánh pía sầu riêng</div><div class="q">×1</div><div class="p">85.000 ₫<s>102.000 ₫</s><b>-17%</b></div></div>
+  <div class="row"><div class="sq e"></div><div class="t">Xoài sấy dẻo</div><div class="q">×1</div><div class="p">45.000 ₫</div></div>
+  <div class="row"><div class="sq f"></div><div class="t">Khô bò miếng</div><div class="q">×1</div><div class="p">95.000 ₫</div></div>
+  <div class="row"><div class="sq g"></div><div class="t">Kẹo dừa Bến Tre</div><div class="q">×1</div><div class="p">35.000 ₫</div></div>
+</div>
+
+<div class="abs chips"><div class="chip">Tất cả</div><div class="chip on">Khô gà &amp; khô bò</div><div class="chip">Bánh tráng</div><div class="chip">Hạt &amp; trái cây sấy</div><div class="chip">Kẹo &amp; bánh ngọt</div><div class="chip">Đồ uống</div></div>
+</body></html>

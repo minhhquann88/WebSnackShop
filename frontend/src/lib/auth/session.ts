@@ -52,6 +52,8 @@ async function doRefresh(): Promise<BrowserSession | null> {
     useAuthStore.getState().setSession(session)
     return session
   }
+  // Drain the error body: an unread response keeps the fetch stream (and its connection) open indefinitely.
+  await readJson(response)
   useAuthStore.getState().clear()
   return null
 }

@@ -81,7 +81,9 @@ dotnet build            # 0 warning
 dotnet format --verify-no-changes
 dotnet test             # cần Docker cho integration test
 
-# Xuất hợp đồng API (commit file này; CI báo lỗi nếu lệch với code)
+# Xuất hợp đồng API vào backend/openapi.json (commit file này; CI báo lỗi nếu lệch với code)
+# Chạy trong thư mục backend/. Nếu đang ở thư mục gốc Web/, dùng:
+#   dotnet run --project backend/src/SnackShop.Api -- --export-openapi "$(pwd)/backend/openapi.json"
 dotnet run --project src/SnackShop.Api -- --export-openapi "$(pwd)/openapi.json"
 
 # Tạo migration mới (không cần biến môi trường: dùng DesignTimeDbContextFactory)

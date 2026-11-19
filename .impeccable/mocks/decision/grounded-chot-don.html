@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><title>SnackShop - Bài đăng chốt đơn</title>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+html,body{width:1440px;height:900px;overflow:hidden;margin:0;font-family:'Be Vietnam Pro',sans-serif;color:#111;background:#F0F2F5}
+*{box-sizing:border-box}
+.hd{height:60px;display:flex;align-items:center;gap:24px;padding:0 48px;background:#fff;border-bottom:1px solid #E4E6EB}
+.logo{font-weight:800;font-size:24px}
+.search{width:420px;height:40px;background:#F0F2F5;border-radius:20px;padding:0 18px;display:flex;align-items:center;color:#65676B;font-size:15px}
+.hd .r{margin-left:auto;display:flex;align-items:center;gap:20px;font-weight:600;font-size:15px}
+.cart{position:relative;width:40px;height:40px;background:#F0F2F5;border-radius:10px}
+.cart b{position:absolute;top:-7px;right:-7px;background:#E53935;color:#fff;font-size:12px;border-radius:999px;padding:2px 7px}
+.strip{height:36px;background:#FFD600;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
+.cols{display:grid;grid-template-columns:300px 680px 300px;gap:24px;justify-content:center;padding-top:20px}
+.card{background:#fff;border-radius:12px;box-shadow:0 1px 2px rgba(0,0,0,.12);padding:16px}
+.card h3{margin:0 0 8px;font-size:16px}
+.cat{height:44px;display:flex;align-items:center;font-size:15px;gap:10px;border-bottom:1px solid #F0F2F5}
+.cat.on{font-weight:700}.cat.on:before{content:"";width:8px;height:8px;border-radius:50%;background:#E53935}
+.inp{height:40px;border:1px solid #CED0D4;border-radius:8px;padding:0 12px;display:flex;align-items:center;color:#65676B;font-size:14px;margin:8px 0}
+.btn{background:#E53935;color:#fff;font-weight:700;border-radius:8px;height:40px;display:flex;align-items:center;justify-content:center;font-size:15px}
+.post{padding:14px 20px 20px}
+.who{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.av{width:40px;height:40px;border-radius:50%;background:#E53935;color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.who b{font-size:15px}.who small{display:block;color:#65676B;font-size:13px}
+.cap{font-size:15px;margin:0 0 12px}
+.ph{position:relative;height:420px;border-radius:10px;background:radial-gradient(circle at 40% 40%,#E8A24A,#C9772E 50%,#6E3417)}
+.ph.b{background:radial-gradient(circle at 40% 40%,#F2C35B,#D6621E 50%,#8B2A12)}
+.price{position:absolute;left:18px;bottom:18px;background:#E53935;color:#fff;font-weight:800;font-size:28px;padding:8px 16px;border-radius:8px;transform:rotate(-4deg);box-shadow:0 4px 10px rgba(0,0,0,.3)}
+.stk{position:absolute;right:18px;top:18px;background:#FFD600;font-weight:700;font-size:13px;padding:6px 12px;border-radius:6px;transform:rotate(3deg)}
+.act{display:grid;grid-template-columns:1fr 180px;gap:12px;margin-top:14px}
+.out{border:1px solid #111;border-radius:8px;height:48px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.act .btn{height:48px;font-size:16px}
+.row{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px solid #F0F2F5}
+.row .t{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,#D9B37C,#9C6B2E)}
+.row b{font-size:14px;display:block}.row em{font-style:normal;color:#E53935;font-weight:700;font-size:14px}.row s{color:#65676B;font-size:12px;margin-left:6px}
+.steps{font-size:14px;line-height:1.9}
+</style></head><body>
+<div class="hd"><div class="logo">SnackShop</div><div class="search">Tìm khô gà, bánh tráng...</div><div class="r"><span>Đăng nhập</span><span class="cart"><b>3</b></span></div></div>
+<div class="strip">FREESHIP cho đơn từ 300.000 ₫ · COD hoặc chuyển khoản VietQR</div>
+<div class="cols">
+ <div>
+  <div class="card"><h3>Danh mục</h3>
+   <div class="cat on">Tất cả</div><div class="cat">Khô gà &amp; khô bò</div><div class="cat">Bánh tráng</div><div class="cat">Hạt &amp; trái cây sấy</div><div class="cat">Kẹo &amp; bánh ngọt</div><div class="cat">Đồ uống</div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>Tra cứu đơn</h3><div class="inp">Mã đơn hoặc SĐT</div><div class="btn">Tra cứu</div></div>
+ </div>
+ <div>
+  <div class="card post">
+   <div class="who"><div class="av">S</div><div><b>SnackShop</b><small>Món bán chạy</small></div></div>
+   <p class="cap">Tối nay ăn vặt gì? Khô gà lá chanh cay nhẹ, xé sợi, gói 250g.</p>
+   <div class="ph"><span class="price">85.000 ₫</span><span class="stk">Còn hàng</span></div>
+   <div class="act"><div class="btn">Chốt đơn</div><div class="out">Xem chi tiết</div></div>
+  </div>
+  <div class="card post" style="margin-top:16px">
+   <div class="who"><div class="av">S</div><div><b>SnackShop</b><small>Bánh tráng</small></div></div>
+   <p class="cap">Bánh tráng trộn Tây Ninh, đủ topping, 25.000 ₫.</p>
+   <div class="ph b"><span class="price">25.000 ₫</span></div>
+  </div>
+ </div>
+ <div>
+  <div class="card"><h3>Hàng mới về</h3>
+   <div class="row"><div class="t"></div><div><b>Hạt điều rang muối</b><em>120.000 ₫</em></div></div>
+   <div class="row"><div class="t"></div><div><b>Bánh pía sầu riêng</b><em>85.000 ₫</em><s>102.000 ₫</s></div></div>
+   <div class="row"><div class="t"></div><div><b>Xoài sấy dẻo</b><em>45.000 ₫</em></div></div>
+   <div class="row"><div class="t"></div><div><b>Kẹo dừa Bến Tre</b><em>35.000 ₫</em></div></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>Cách đặt hàng</h3><div class="steps">1. Chọn món<br>2. COD hoặc VietQR<br>3. Nhận hàng tận nhà</div></div>
+ </div>
+</div>
+</body></html>

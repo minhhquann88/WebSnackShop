@@ -3,3 +3,5 @@ node_modules
 pnpm-lock.yaml
 src/lib/api/schema.d.ts
 coverage
+test-results
+playwright-report

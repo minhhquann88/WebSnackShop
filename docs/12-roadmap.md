@@ -90,7 +90,7 @@ Mục tiêu: một request đi xuyên 4 lớp, có test, có CI, có Docker. Ch�
 | 3.6 ✅ | Backup/restore script + cron + rclone; **tập restore** | 0.5d |
 | 3.7 ⬜ (cần tài khoản UptimeRobot/Better Stack + bot Telegram của chủ shop) | Uptime monitor, Seq (tùy chọn), cảnh báo Telegram | 0.5d |
 | 3.8 🟡 (đo sơ bộ bằng ApacheBench trên máy dev — Docker Desktop dùng chung CPU, không đại diện VPS: `GET /products` ~20–27 ms/request khi tuần tự, ~87 rps / p95 1,4 s ở 50 kết nối sau khi tối ưu truy vấn. **Cần đo lại bằng k6 trên VPS thật** trước go-live) | Load test nhanh `GET /products` với k6 (mục tiêu p95 < 300ms @ 50 VU) | 0.5d |
-| 3.9 ⬜ | Coverage gate bật trong CI | 0.25d |
+| 3.9 ✅ (`backend/scripts/coverage-gate.py`; đo 04/11/2026: Domain 91,8 %, Application 83,2 %, tổng 83,7 %) | Coverage gate bật trong CI | 0.25d |
 | 3.10 ⬜ (sau khi push GitHub và CI xanh) | Tag `v1.0.0` | |
 
 ## Frontend (song song từ tuần 2)
@@ -101,7 +101,7 @@ Mục tiêu: một request đi xuyên 4 lớp, có test, có CI, có Docker. Ch�
 | 3 | Giỏ hàng (Zustand persist), đăng nhập/đăng ký/Google, BFF auth route, `/me` |
 | 4 | Checkout + estimate + trang đơn hàng + QR CK, tra cứu đơn, lịch sử đơn, sổ địa chỉ |
 | 5 | Admin: layout, login, dashboard, sản phẩm (CRUD, upload ảnh, biến thể), danh mục |
-| 6 | Admin: đơn hàng (list/filter/detail/chuyển trạng thái), kho, cài đặt, khách hàng; Playwright luồng đặt hàng |
+| 6 | Admin: đơn hàng (list/filter/detail/chuyển trạng thái), kho, cài đặt, khách hàng; Playwright luồng đặt hàng ✅ (`frontend/e2e`, chạy local — chưa đưa vào CI) |
 
 ## Phase 4 — Sau MVP (backlog, theo thứ tự giá trị)
 

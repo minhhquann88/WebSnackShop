@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>SnackShop - Canon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+html,body{width:1440px;height:900px;overflow:hidden;margin:0}
+body{font-family:"Be Vietnam Pro",sans-serif;color:#111827;background:#fff}
+a{color:inherit;text-decoration:none}
+header{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 120px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:26px;width:220px}
+.mark{width:28px;height:28px;border-radius:8px;background:#EE4D2D}
+.search{display:flex;width:640px;height:44px;background:#F5F5F5;border-radius:10px;overflow:hidden}
+.search span{flex:1;padding:0 18px;line-height:44px;color:#6B7280;font-size:14px}
+.search b{width:64px;background:#EE4D2D;display:grid;place-items:center}
+.search i{width:16px;height:16px;border:2.5px solid #fff;border-radius:50%;position:relative}
+.search i:after{content:"";position:absolute;width:3px;height:8px;background:#fff;right:-5px;bottom:-7px;transform:rotate(-45deg)}
+.right{width:220px;display:flex;justify-content:flex-end;align-items:center;gap:20px;font-size:14px;font-weight:500}
+.cart{position:relative;width:44px;height:44px;background:#F5F5F5;border-radius:10px;display:grid;place-items:center}
+.cart i{width:20px;height:14px;border:2.5px solid #111827;border-radius:2px 2px 6px 6px}
+.cart em{position:absolute;top:-6px;right:-6px;background:#EE4D2D;color:#fff;font:700 11px/20px "Be Vietnam Pro";width:20px;text-align:center;border-radius:10px}
+nav{height:44px;background:#F5F5F5;display:flex;justify-content:center;gap:40px;align-items:stretch;font-size:14px;font-weight:500}
+nav a{display:flex;align-items:center;border-bottom:2px solid transparent}
+nav a.on{color:#EE4D2D;border-color:#EE4D2D;font-weight:600}
+.hero{width:1200px;height:300px;margin:20px auto 0;border-radius:16px;background:linear-gradient(110deg,#EE4D2D,#FF8A5B 70%,#FFB070);position:relative;overflow:hidden;padding:64px 56px;color:#fff}
+.hero h1{margin:0;font-size:48px;font-weight:800;line-height:1.15}
+.hero p{margin:14px 0 26px;font-size:18px}
+.btn{display:inline-block;background:#fff;color:#EE4D2D;font-weight:700;font-size:16px;padding:13px 28px;border-radius:10px}
+.big{position:absolute;right:-30px;top:-20px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFE2A8,#E8A04A 45%,#B5651D 85%);box-shadow:0 0 0 24px rgba(255,255,255,.15)}
+.big:after{content:"";position:absolute;left:80px;top:90px;width:90px;height:60px;border-radius:50%;background:rgba(255,255,255,.25)}
+.cats{width:1200px;margin:22px auto 0;display:flex;justify-content:space-between;padding:0 24px}
+.cats div{width:100px;text-align:center;font-size:13px;font-weight:500}
+.cats span{display:block;width:72px;height:72px;margin:0 auto 6px;border-radius:50%;background:#F5F5F5;position:relative}
+.cats span:after{content:"";position:absolute;inset:20px;border-radius:50%;background:var(--g)}
+.sec{width:1200px;margin:22px auto 12px;display:flex;justify-content:space-between;align-items:baseline}
+.sec h2{margin:0;font-size:24px;font-weight:700}
+.sec a{color:#EE4D2D;font-weight:600;font-size:14px}
+.grid{width:1200px;margin:0 auto;display:flex;gap:26.67px;justify-content:space-between}
+.card{width:280px;height:244px;border:1px solid #E5E7EB;border-radius:12px;background:#fff;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.ph{height:100px;background:var(--g);position:relative;flex:none}
+.ph:after{content:"";position:absolute;left:50%;top:50%;width:150px;height:68px;margin:-34px 0 0 -75px;border-radius:50%;background:rgba(255,255,255,.18)}
+.tag{position:absolute;top:10px;left:10px;z-index:1;background:#fff;color:#EE4D2D;font-weight:700;font-size:12px;padding:3px 8px;border-radius:6px}
+.info{padding:10px 14px 0;flex:1}
+.name{font-weight:500;font-size:15px;line-height:20px;height:20px}
+.price{margin-top:4px;font-size:18px;font-weight:700;color:#EE4D2D}
+.price s{font-size:13px;font-weight:400;color:#9CA3AF;margin-left:8px}
+.sold{font-size:12px;color:#6B7280;margin-top:2px}
+.add{margin:0 14px 12px;height:36px;border-radius:8px;background:#EE4D2D;color:#fff;font-weight:600;font-size:14px;text-align:center;line-height:36px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><div class="mark"></div>SnackShop</div>
+  <div class="search"><span>Tìm khô gà, bánh tráng, hạt sấy...</span><b><i></i></b></div>
+  <div class="right"><a href="#">Đăng nhập</a><div class="cart"><i></i><em>3</em></div></div>
+</header>
+<nav><a class="on" href="#">Tất cả</a><a href="#">Khô gà &amp; khô bò</a><a href="#">Bánh tráng</a><a href="#">Hạt &amp; trái cây sấy</a><a href="#">Kẹo &amp; bánh ngọt</a><a href="#">Đồ uống</a></nav>
+<section class="hero">
+  <h1>Ăn vặt ngon, giao tận nhà</h1>
+  <p>Đặt không cần tài khoản · COD hoặc chuyển khoản VietQR</p>
+  <a class="btn" href="#">Xem thực đơn</a>
+  <div class="big"></div>
+</section>
+<div class="cats">
+  <div><span style="--g:linear-gradient(135deg,#F2B36B,#B5651D)"></span>Khô gà &amp; khô bò</div>
+  <div><span style="--g:linear-gradient(135deg,#FFE9C2,#E8B26A)"></span>Bánh tráng</div>
+  <div><span style="--g:linear-gradient(135deg,#F6D58E,#C98A2B)"></span>Hạt sấy</div>
+  <div><span style="--g:linear-gradient(135deg,#FFB3A0,#D9534A)"></span>Trái cây sấy</div>
+  <div><span style="--g:linear-gradient(135deg,#FFD0E0,#E5739B)"></span>Kẹo &amp; bánh ngọt</div>
+  <div><span style="--g:linear-gradient(135deg,#BFE3F5,#5BA7D0)"></span>Đồ uống</div>
+</div>
+<div class="sec"><h2>Món bán chạy</h2><a href="#">Xem tất cả →</a></div>
+<div class="grid">
+  <div class="card"><div class="ph" style="--g:linear-gradient(135deg,#E9A25A,#9C4F1A)"></div><div class="info"><div class="name">Khô gà lá chanh</div><div class="price">85.000 ₫</div><div class="sold">Đã bán</div></div><div class="add">Thêm vào giỏ</div></div>
+  <div class="card"><div class="ph" style="--g:linear-gradient(135deg,#FFE7B8,#E0A04C)"></div><div class="info"><div class="name">Bánh tráng trộn Tây Ninh</div><div class="price">25.000 ₫</div><div class="sold">Đã bán</div></div><div class="add">Thêm vào giỏ</div></div>
+  <div class="card"><div class="ph" style="--g:linear-gradient(135deg,#F4D08A,#BF7F2A)"></div><div class="info"><div class="name">Hạt điều rang muối</div><div class="price">120.000 ₫</div><div class="sold">Đã bán</div></div><div class="add">Thêm vào giỏ</div></div>
+  <div class="card"><div class="tag">-17%</div><div class="ph" style="--g:linear-gradient(135deg,#F7E08A,#D9A441)"></div><div class="info"><div class="name">Bánh pía sầu riêng</div><div class="price">85.000 ₫<s>102.000 ₫</s></div><div class="sold">Đã bán</div></div><div class="add">Thêm vào giỏ</div></div>
+</div>
+</body>
+</html>

@@ -147,7 +147,7 @@ Chạy cùng unit test, ms. Khi thêm quy tắc mới vào `04-coding-convention
 
 ## 8. Coverage và chất lượng
 
-- Mục tiêu: Domain ≥ 90 %, Application ≥ 80 %, tổng ≥ 75 %. CI báo cáo (ReportGenerator → summary trong PR), **không** fail build vì coverage ở MVP; fail khi ổn định (Phase 3).
+- Mục tiêu: Domain ≥ 90 %, Application ≥ 80 %, tổng (Domain + Application + Infrastructure + Api) ≥ 75 % line coverage. **CI fail** khi dưới ngưỡng: `backend/scripts/coverage-gate.py` gộp các file Cobertura của mọi test project (một dòng tính là phủ nếu bất kỳ project nào chạm tới, bỏ qua `Migrations`), in bảng vào job summary. Đổi ngưỡng trong `THRESHOLDS` của script.
 - Test phải **deterministic**: không `DateTime.Now`, không random không seed, không phụ thuộc thứ tự, không sleep.
 - Test chậm (> 2s) đánh `[Trait("Category","Slow")]`, CI vẫn chạy, dev có thể lọc.
 - Không `Skip` test quá 1 sprint. Xóa hoặc sửa.
@@ -159,8 +159,19 @@ dotnet test                                                      # tất cả (c
 dotnet test --project tests/SnackShop.Domain.Tests               # nhanh, không cần Docker
 dotnet test --filter-trait "Category!=Slow"
 dotnet test --coverage --coverage-output-format cobertura --results-directory ./TestResults
-reportgenerator -reports:TestResults/**/*.cobertura.xml -targetdir:coverage
+python scripts/coverage-gate.py TestResults                       # coverage gate như CI
+reportgenerator -reports:TestResults/**/*.cobertura.xml -targetdir:coverage   # báo cáo HTML (tùy chọn)
 ```
+
+E2E (Playwright, `frontend/e2e`) chạy trên stack đang chạy: `docker compose -f infra/docker-compose.yml up -d`, API `:5000` (có dev seed), web `:3000`, rồi:
+
+```bash
+cd frontend
+pnpm exec playwright install chromium    # lần đầu
+pnpm test:e2e                            # E2E_BASE_URL / E2E_API_URL / E2E_ADMIN_EMAIL / E2E_ADMIN_PASSWORD để trỏ staging
+```
+
+Bao phủ: khách đặt COD → giỏ trống → tra cứu đơn → admin xác nhận/chuẩn bị/giao/hoàn tất → API báo `Delivered`; khách đặt chuyển khoản → QR + nội dung CK hiển thị, không tràn ngang trên điện thoại. Mỗi lần chạy tạo đơn thật trong DB dev. Chạy trên `next dev` chậm hơn lần đầu (biên dịch route); ổn định nhất với `pnpm build && pnpm start`. Chưa chạy trong CI (cần dựng cả Postgres + API + web).
 
 `dotnet test` trên Microsoft.Testing.Platform nhận tham số trực tiếp (`--report-trx`, `--coverage`, `--filter-trait`), không dùng `--logger`/`--collect` kiểu VSTest cũ. Test method không cần hậu tố `Async` (ngoại lệ trong `.editorconfig` cho `backend/tests/**`).
 

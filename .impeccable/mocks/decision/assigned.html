@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><title>SnackShop - Bàn nhựa vỉa hè</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+html,body{width:1440px;height:900px;overflow:hidden;margin:0}
+body{position:relative;font-family:"Be Vietnam Pro",sans-serif;color:#1E1E1E;background:#FFF7EC repeating-conic-gradient(rgba(232,69,60,.7) 0 25%,#FFF7EC 0 50%) 0 0/56px 56px}
+*{box-sizing:border-box}
+.band{position:absolute;left:0;top:0;width:1440px;height:72px;background:#E8453C;display:flex;align-items:center;padding:0 40px;color:#fff}
+.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:40px;letter-spacing:-1px;width:300px}
+.search{flex:1;max-width:560px;margin-left:80px;height:44px;border-radius:22px;background:#fff;color:#1E1E1E;opacity:.95;display:flex;align-items:center;padding:0 22px;font-size:15px}
+.right{margin-left:auto;display:flex;align-items:center;gap:28px;font-weight:600;font-size:16px}
+.cart{background:#fff;color:#1E1E1E;border-radius:22px;height:44px;padding:0 8px 0 20px;display:flex;align-items:center;gap:10px;font-weight:700}
+.cart b{background:#E8453C;color:#fff;border-radius:50%;width:28px;height:28px;display:grid;place-items:center;font-size:14px}
+.strip{position:absolute;left:0;top:72px;width:1440px;height:12px;background:#FFF7EC repeating-conic-gradient(#E8453C 0 25%,#FFF7EC 0 50%) 0 0/24px 24px}
+.cats{position:absolute;left:40px;top:104px;display:flex;gap:16px}
+.cat{height:56px;padding:0 26px;border-radius:28px;background:#fff;border:2px solid #E8453C;box-shadow:0 4px 0 rgba(30,30,30,.12),0 6px 10px rgba(30,30,30,.1);display:flex;align-items:center;font-weight:600;font-size:15px;white-space:nowrap}
+.cat.on{background:#E8453C;color:#fff;border-color:#B3261E}
+.plate{position:absolute;background:#fff;border:2px solid #E5DCCB;border-radius:28px;box-shadow:0 10px 24px rgba(30,30,30,.18),inset 0 0 0 6px #fff,inset 0 0 0 7px #FFF7EC;display:flex;flex-direction:column;align-items:center}
+.hook{left:60px;top:196px;width:520px;height:300px;padding:34px 38px;align-items:flex-start}
+h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:64px;line-height:1;margin:0 0 16px;letter-spacing:-1.5px}
+.hook p{font-size:18px;line-height:1.5;margin:0 0 22px}
+.btn{background:#E8453C;color:#fff;font-weight:700;border-radius:14px;border-bottom:4px solid #B3261E;display:flex;align-items:center;justify-content:center;height:48px;padding:0 28px;font-size:16px}
+.btn.s{height:36px;font-size:13px;padding:0 18px;border-radius:12px}
+.p{padding:16px 14px 14px}
+.p .ph{border-radius:50%;box-shadow:inset 0 -8px 18px rgba(30,30,30,.25),0 4px 8px rgba(30,30,30,.15);border:4px solid #fff;outline:2px solid #E5DCCB}
+.p .n{font-weight:600;font-size:16px;margin:12px 0 8px;text-align:center}
+.p .btn.s{margin-top:auto}
+.tag{position:absolute;right:-14px;top:14px;transform:rotate(-3deg);background:#E8453C;color:#fff;font-weight:700;font-size:16px;padding:6px 14px;border-radius:6px;box-shadow:0 3px 0 #B3261E,0 6px 8px rgba(30,30,30,.2)}
+.tag:before{content:"";position:absolute;left:-5px;top:50%;margin-top:-5px;width:10px;height:10px;border-radius:50%;background:#FFF7EC;border:2px solid #B3261E}
+.chips{position:absolute;left:16px;top:16px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.chip{font-size:12px;font-weight:700;padding:3px 10px;border-radius:10px;color:#fff;background:#3E9B4F}
+.chip.y{background:#F2B134;color:#1E1E1E}
+.chip.d{background:#B3261E}
+.old{font-size:13px;color:#1E1E1E;text-decoration:line-through;font-weight:400;margin-left:8px}
+.sauce{position:absolute;left:1250px;top:610px;width:130px;height:130px;border-radius:50%;background:#fff;border:2px solid #E5DCCB;box-shadow:0 8px 16px rgba(30,30,30,.18);display:grid;place-items:center}
+.sauce i{width:96px;height:96px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#E8453C,#B3261E 70%);box-shadow:inset 0 -6px 12px rgba(30,30,30,.3)}
+</style></head><body>
+<div class="band"><div class="logo">SnackShop</div><div class="search">Tìm khô gà, bánh tráng...</div>
+<div class="right"><span>Đăng nhập</span><div class="cart">Giỏ hàng <b>3</b></div></div></div>
+<div class="strip"></div>
+<div class="cats"><div class="cat on">Tất cả</div><div class="cat">Khô gà &amp; khô bò</div><div class="cat">Bánh tráng</div><div class="cat">Hạt &amp; trái cây sấy</div><div class="cat">Kẹo &amp; bánh ngọt</div><div class="cat">Đồ uống</div></div>
+
+<div class="plate hook"><h1>Tối nay ăn<br>vặt gì?</h1><p>Khô gà lá chanh, bánh tráng trộn, hạt sấy. Đặt không cần tài khoản, COD hoặc quét VietQR.</p><div class="btn">Xem thực đơn</div></div>
+
+<div class="plate p" style="left:650px;top:186px;width:300px;height:300px"><div class="chips"><span class="chip">Còn hàng</span><span class="chip y">Bán chạy</span></div>
+<div class="ph" style="width:176px;height:176px;background:radial-gradient(circle at 35% 30%,#F2B134,#B8741E 55%,#7A4A12)"></div><div class="n">Khô gà lá chanh</div><div class="tag">85.000 ₫</div><div class="btn s">Thêm vào giỏ</div></div>
+
+<div class="plate p" style="left:1020px;top:170px;width:300px;height:300px"><div class="chips"><span class="chip d">-17%</span></div>
+<div class="ph" style="width:176px;height:176px;background:radial-gradient(circle at 40% 35%,#F7D58A,#E0A24A 50%,#A8681E)"></div><div class="n">Bánh pía sầu riêng<span class="old">102.000 ₫</span></div><div class="tag">85.000 ₫</div><div class="btn s">Thêm vào giỏ</div></div>
+
+<div class="plate p" style="left:130px;top:560px;width:250px;height:250px"><div class="ph" style="width:130px;height:130px;background:radial-gradient(circle at 35% 30%,#F2B134,#E8453C 60%,#B3261E)"></div><div class="n">Bánh tráng trộn Tây Ninh</div><div class="tag">25.000 ₫</div><div class="btn s">Thêm vào giỏ</div></div>
+
+<div class="plate p" style="left:500px;top:590px;width:250px;height:250px"><div class="ph" style="width:130px;height:130px;background:radial-gradient(circle at 35% 30%,#F7D58A,#D69A3C 55%,#8A5516)"></div><div class="n">Hạt điều rang muối</div><div class="tag">120.000 ₫</div><div class="btn s">Thêm vào giỏ</div></div>
+
+<div class="plate p" style="left:870px;top:548px;width:250px;height:250px"><div class="ph" style="width:130px;height:130px;background:radial-gradient(circle at 35% 30%,#F2B134,#E08A1E 55%,#B3261E)"></div><div class="n">Xoài sấy dẻo</div><div class="tag">45.000 ₫</div><div class="btn s">Thêm vào giỏ</div></div>
+
+<div class="sauce"><i></i></div>
+</body></html>

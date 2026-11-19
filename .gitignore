@@ -60,3 +60,8 @@ desktop.ini
 
 # ---------- Build artifacts ----------
 artifacts/
+
+# Impeccable (design skill): local config and review screenshots are per-machine
+.impeccable/config.local.json
+.impeccable/review/
+.impeccable/questions/
